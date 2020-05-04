@@ -1,5 +1,5 @@
 % Spectogram generator
-[signal,fs] = audioread('eva/R09_0004.wav'); 
+[signal,fs] = audioread('../data/wavs/R09_0004.wav'); 
 
 signal      = signal-mean(signal); 
 sig=signal./max(abs(signal));

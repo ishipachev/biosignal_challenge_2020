@@ -1,4 +1,4 @@
-[t, fs] = audioread('R09_0004.wav');
+[t, fs] = audioread('../data/wavs/R09_0004.wav');
 % sound(t, fs);
 
 %% eva's cutoff

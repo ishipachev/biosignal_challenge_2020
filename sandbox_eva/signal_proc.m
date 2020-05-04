@@ -4,7 +4,7 @@
 
 % TODO: experiment with various window lengths and shifts
 win_len  = 512;                    
-[signal,fs] = audioread('R09_0004.wav'); 
+[signal,fs] = audioread('../data/wavs/R09_0004.wav'); 
 
 % Mean-subtracting filtering
 % TODO: check if consequently leads to FTT distortion
@@ -83,7 +83,7 @@ hold on, plot(t,medfilt1(F0,5),'r'), hold off, xlabel('---> cas [s]')
 
 clear all, clc
 figure()
-[sig,fs]=audioread('R09_0004.wav');
+[sig,fs]=audioread('../data/wavs/R09_0004.wav');
 win_len  = 512;                    
 sig = sig./max(abs(sig));
 E = 10*log10(filter(ones(1,win_len)/win_len, 1, sig.^2));  % log to transform to dB unit
@@ -124,6 +124,7 @@ plot(t,sig)
 %     - Is it worth paying much attention to the structure (YES, if fundamental frequency is a big deal)
 % * to not collapse because we are still cool and have a lot of time
 %     - wink wink
+%     - хрю-хрю
 
 
 
