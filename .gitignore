@@ -1,4 +1,4 @@
 # Data .wav files with speech #
 ##############
-data/*.wav
+data/wavs/*.wav
 
