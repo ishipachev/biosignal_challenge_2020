@@ -1,4 +1,10 @@
-# biosignal_challenge_2020
-CVUT's biosignal challenge 2020: 
+# Biosignal Challenge 2020 (CVUT)
+
+
+Link to the event description:
+
 http://sami.fel.cvut.cz/biosignalchallenge2020/
-(test)
+
+## Data
+
+Put all .wav files inside *data* folder in the project's root. They are .gitignored by default, so this step should be done manually.
