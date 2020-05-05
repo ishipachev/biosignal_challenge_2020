@@ -16,9 +16,9 @@
 % t = t(1:idx)';
 
 %%
-timelim_sec = 2;
-timelim_cnt = timelim_sec * fs;
-t = t(1:timelim_cnt);
+% timelim_sec = 2;
+% timelim_cnt = timelim_sec * fs;
+% t = t(1:timelim_cnt);
 
 
 % Create and set up an audioFeatureExtractor object
@@ -86,3 +86,22 @@ subplot(2, 1, 1);
 imagesc(A(cutoff_lspec,:));
 subplot(2, 1, 2);
 plot(t);
+
+%% with mpraattest.m together
+
+newcolors = {'blue'};
+colororder(newcolors);
+
+cutoff_lspec = 699:711;
+% cutoff_lspec = 621:633;
+% cutoff_lspec = 514:620;
+% cutoff_lspec = 1:80;
+
+
+figure();
+subplot(2, 1, 1);
+imagesc(A(cutoff_lspec,:));
+% subplot(2, 1, 2);
+tgPlot(newtg,2);
+grid minor;
+% plot(t);
