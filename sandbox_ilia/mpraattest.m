@@ -7,7 +7,7 @@ wavpath = '../data/wavs';
 tgfile = fullfile(tgpath, [filename '.TextGrid']);
 wavfile = fullfile(wavpath, [filename '.wav']);
 [snd, fs] = audioread(wavfile);
-sound(snd, fs);
+% sound(snd, fs);
 t = 0: 1/fs: (length(snd)-1)/fs;
 %%
 
