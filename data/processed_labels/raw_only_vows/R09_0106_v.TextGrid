@@ -1,0 +1,302 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000000000000 
+xmax = 19.958888999999999 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "MAU" 
+        xmin = 0.127120000000000 
+        xmax = 14.337120000000001 
+        intervals: size = 72 
+        intervals [1]:
+            xmin = 0.127120000000000 
+            xmax = 0.177120000000000 
+            text = "v" 
+        intervals [2]:
+            xmin = 0.177120000000000 
+            xmax = 0.217120000000000 
+            text = "v" 
+        intervals [3]:
+            xmin = 0.217120000000000 
+            xmax = 0.327120000000000 
+            text = "v" 
+        intervals [4]:
+            xmin = 0.537120000000000 
+            xmax = 0.577120000000000 
+            text = "v" 
+        intervals [5]:
+            xmin = 0.627120000000000 
+            xmax = 0.797120000000000 
+            text = "v" 
+        intervals [6]:
+            xmin = 0.797120000000000 
+            xmax = 0.847120000000000 
+            text = "v" 
+        intervals [7]:
+            xmin = 1.347120000000000 
+            xmax = 1.477120000000000 
+            text = "v" 
+        intervals [8]:
+            xmin = 1.477120000000000 
+            xmax = 1.617120000000000 
+            text = "v" 
+        intervals [9]:
+            xmin = 1.777120000000000 
+            xmax = 1.857120000000000 
+            text = "v" 
+        intervals [10]:
+            xmin = 1.977120000000000 
+            xmax = 2.167120000000000 
+            text = "v" 
+        intervals [11]:
+            xmin = 2.317120000000000 
+            xmax = 2.367120000000000 
+            text = "v" 
+        intervals [12]:
+            xmin = 2.367120000000000 
+            xmax = 2.467120000000000 
+            text = "v" 
+        intervals [13]:
+            xmin = 2.497120000000000 
+            xmax = 2.657120000000000 
+            text = "v" 
+        intervals [14]:
+            xmin = 2.807120000000000 
+            xmax = 2.877120000000000 
+            text = "v" 
+        intervals [15]:
+            xmin = 2.947120000000000 
+            xmax = 3.027120000000000 
+            text = "v" 
+        intervals [16]:
+            xmin = 3.217120000000000 
+            xmax = 3.407120000000000 
+            text = "v" 
+        intervals [17]:
+            xmin = 3.547120000000000 
+            xmax = 3.617120000000000 
+            text = "v" 
+        intervals [18]:
+            xmin = 3.827120000000000 
+            xmax = 3.977120000000000 
+            text = "v" 
+        intervals [19]:
+            xmin = 4.087120000000000 
+            xmax = 4.227120000000000 
+            text = "v" 
+        intervals [20]:
+            xmin = 4.307120000000000 
+            xmax = 4.427120000000000 
+            text = "v" 
+        intervals [21]:
+            xmin = 4.427120000000000 
+            xmax = 4.517120000000000 
+            text = "v" 
+        intervals [22]:
+            xmin = 4.567120000000000 
+            xmax = 4.807120000000000 
+            text = "v" 
+        intervals [23]:
+            xmin = 4.807120000000000 
+            xmax = 4.857120000000000 
+            text = "v" 
+        intervals [24]:
+            xmin = 5.457120000000000 
+            xmax = 5.487120000000000 
+            text = "v" 
+        intervals [25]:
+            xmin = 5.537120000000000 
+            xmax = 5.847120000000000 
+            text = "v" 
+        intervals [26]:
+            xmin = 5.847120000000000 
+            xmax = 5.937120000000000 
+            text = "v" 
+        intervals [27]:
+            xmin = 5.937120000000000 
+            xmax = 6.027120000000000 
+            text = "v" 
+        intervals [28]:
+            xmin = 6.027120000000000 
+            xmax = 6.277120000000000 
+            text = "v" 
+        intervals [29]:
+            xmin = 6.507120000000000 
+            xmax = 6.927120000000000 
+            text = "v" 
+        intervals [30]:
+            xmin = 6.927120000000000 
+            xmax = 7.057120000000000 
+            text = "v" 
+        intervals [31]:
+            xmin = 7.147120000000000 
+            xmax = 7.187120000000000 
+            text = "v" 
+        intervals [32]:
+            xmin = 7.297120000000000 
+            xmax = 7.357120000000000 
+            text = "v" 
+        intervals [33]:
+            xmin = 7.507120000000000 
+            xmax = 7.607120000000000 
+            text = "v" 
+        intervals [34]:
+            xmin = 7.697120000000000 
+            xmax = 7.757120000000000 
+            text = "v" 
+        intervals [35]:
+            xmin = 7.847120000000000 
+            xmax = 7.967120000000000 
+            text = "v" 
+        intervals [36]:
+            xmin = 8.007120000000000 
+            xmax = 8.227119999999999 
+            text = "v" 
+        intervals [37]:
+            xmin = 8.677120000000000 
+            xmax = 8.777120000000000 
+            text = "v" 
+        intervals [38]:
+            xmin = 8.847120000000000 
+            xmax = 9.027120000000000 
+            text = "v" 
+        intervals [39]:
+            xmin = 9.137119999999999 
+            xmax = 9.387119999999999 
+            text = "v" 
+        intervals [40]:
+            xmin = 9.567119999999999 
+            xmax = 10.087120000000001 
+            text = "v" 
+        intervals [41]:
+            xmin = 10.117120000000000 
+            xmax = 10.657120000000001 
+            text = "v" 
+        intervals [42]:
+            xmin = 10.957120000000000 
+            xmax = 11.107120000000000 
+            text = "v" 
+        intervals [43]:
+            xmin = 11.107120000000000 
+            xmax = 11.557119999999999 
+            text = "v" 
+        intervals [44]:
+            xmin = 11.557119999999999 
+            xmax = 11.627120000000000 
+            text = "v" 
+        intervals [45]:
+            xmin = 11.807119999999999 
+            xmax = 11.957120000000000 
+            text = "v" 
+        intervals [46]:
+            xmin = 12.007120000000000 
+            xmax = 12.257120000000000 
+            text = "v" 
+        intervals [47]:
+            xmin = 13.067119999999999 
+            xmax = 13.337120000000001 
+            text = "v" 
+        intervals [48]:
+            xmin = 13.337120000000001 
+            xmax = 13.377120000000000 
+            text = "v" 
+        intervals [49]:
+            xmin = 13.637119999999999 
+            xmax = 13.677120000000000 
+            text = "v" 
+        intervals [50]:
+            xmin = 13.707120000000000 
+            xmax = 13.817119999999999 
+            text = "v" 
+        intervals [51]:
+            xmin = 13.897119999999999 
+            xmax = 14.017120000000000 
+            text = "v" 
+        intervals [52]:
+            xmin = 14.117120000000000 
+            xmax = 14.247120000000001 
+            text = "v" 
+        intervals [53]:
+            xmin = 14.417120000000001 
+            xmax = 14.547120000000000 
+            text = "v" 
+        intervals [54]:
+            xmin = 14.657120000000001 
+            xmax = 14.787120000000000 
+            text = "v" 
+        intervals [55]:
+            xmin = 14.837120000000001 
+            xmax = 14.957120000000000 
+            text = "v" 
+        intervals [56]:
+            xmin = 15.057119999999999 
+            xmax = 15.327120000000001 
+            text = "v" 
+        intervals [57]:
+            xmin = 16.137119999999999 
+            xmax = 16.617120000000000 
+            text = "v" 
+        intervals [58]:
+            xmin = 16.617120000000000 
+            xmax = 17.047120000000000 
+            text = "v" 
+        intervals [59]:
+            xmin = 17.077120000000001 
+            xmax = 17.237120000000001 
+            text = "v" 
+        intervals [60]:
+            xmin = 17.237120000000001 
+            xmax = 17.357119999999998 
+            text = "v" 
+        intervals [61]:
+            xmin = 17.427119999999999 
+            xmax = 17.507120000000000 
+            text = "v" 
+        intervals [62]:
+            xmin = 17.507120000000000 
+            xmax = 17.537120000000002 
+            text = "v" 
+        intervals [63]:
+            xmin = 17.607119999999998 
+            xmax = 17.767119999999998 
+            text = "v" 
+        intervals [64]:
+            xmin = 17.847120000000000 
+            xmax = 18.047120000000000 
+            text = "v" 
+        intervals [65]:
+            xmin = 18.127120000000001 
+            xmax = 18.357119999999998 
+            text = "v" 
+        intervals [66]:
+            xmin = 18.657119999999999 
+            xmax = 18.797120000000000 
+            text = "v" 
+        intervals [67]:
+            xmin = 18.907119999999999 
+            xmax = 18.947120000000002 
+            text = "v" 
+        intervals [68]:
+            xmin = 18.997119999999999 
+            xmax = 19.077120000000001 
+            text = "v" 
+        intervals [69]:
+            xmin = 19.327120000000001 
+            xmax = 19.367120000000000 
+            text = "v" 
+        intervals [70]:
+            xmin = 0.407120000000000 
+            xmax = 0.537120000000000 
+            text = "v" 
+        intervals [71]:
+            xmin = 2.167120000000000 
+            xmax = 2.247120000000000 
+            text = "v" 
+        intervals [72]:
+            xmin = 14.247120000000001 
+            xmax = 14.337120000000001 
+            text = "v" 
