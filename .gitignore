@@ -2,3 +2,5 @@
 ##############
 data/wavs/*.wav
 
+# Ignore mPraat toolbox #
+mPraat/

@@ -1,0 +1,318 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 19.357098
+tiers? <exists> 
+size = 1
+item []:
+    item [1]:
+        class = "IntervalTier"
+        name = "MAU"
+        xmin = 0
+        xmax = 19.357098
+        intervals: size = 76
+        intervals [1]:
+            xmin = 0.000000
+            xmax = 0.097120
+            text = "<p:>"
+        intervals [2]:
+            xmin = 0.097120
+            xmax = 0.237120
+            text = "s"
+        intervals [3]:
+            xmin = 0.237120
+            xmax = 0.317120
+            text = "d"
+        intervals [4]:
+            xmin = 0.317120
+            xmax = 0.587120
+            text = "a:"
+        intervals [5]:
+            xmin = 0.587120
+            xmax = 0.647120
+            text = "n"
+        intervals [6]:
+            xmin = 0.647120
+            xmax = 0.977120
+            text = "a:"
+        intervals [7]:
+            xmin = 0.977120
+            xmax = 1.057120
+            text = "k"
+        intervals [8]:
+            xmin = 1.057120
+            xmax = 1.527120
+            text = "<usb>"
+        intervals [9]:
+            xmin = 1.527120
+            xmax = 2.947120
+            text = "<usb>"
+        intervals [10]:
+            xmin = 2.947120
+            xmax = 3.167120
+            text = "<usb>"
+        intervals [11]:
+            xmin = 3.167120
+            xmax = 3.207120
+            text = "d"
+        intervals [12]:
+            xmin = 3.207120
+            xmax = 3.257120
+            text = "O"
+        intervals [13]:
+            xmin = 3.257120
+            xmax = 3.397120
+            text = "l"
+        intervals [14]:
+            xmin = 3.397120
+            xmax = 3.517120
+            text = "i:"
+        intervals [15]:
+            xmin = 3.517120
+            xmax = 3.627120
+            text = "d"
+        intervals [16]:
+            xmin = 3.627120
+            xmax = 3.797120
+            text = "a:"
+        intervals [17]:
+            xmin = 3.797120
+            xmax = 3.857120
+            text = "x"
+        intervals [18]:
+            xmin = 3.857120
+            xmax = 4.027120
+            text = "f"
+        intervals [19]:
+            xmin = 4.027120
+            xmax = 4.057120
+            text = "Y"
+        intervals [20]:
+            xmin = 4.057120
+            xmax = 4.237120
+            text = "6"
+        intervals [21]:
+            xmin = 4.237120
+            xmax = 4.957120
+            text = "<usb>"
+        intervals [22]:
+            xmin = 4.957120
+            xmax = 5.177120
+            text = "t"
+        intervals [23]:
+            xmin = 5.177120
+            xmax = 5.617120
+            text = "m"
+        intervals [24]:
+            xmin = 5.617120
+            xmax = 6.027120
+            text = "<usb>"
+        intervals [25]:
+            xmin = 6.027120
+            xmax = 6.407120
+            text = "<p:>"
+        intervals [26]:
+            xmin = 6.407120
+            xmax = 6.517120
+            text = "<p:>"
+        intervals [27]:
+            xmin = 6.517120
+            xmax = 6.567120
+            text = "d"
+        intervals [28]:
+            xmin = 6.567120
+            xmax = 6.927120
+            text = "6"
+        intervals [29]:
+            xmin = 6.927120
+            xmax = 7.147120
+            text = "s"
+        intervals [30]:
+            xmin = 7.147120
+            xmax = 7.447120
+            text = "a:"
+        intervals [31]:
+            xmin = 7.447120
+            xmax = 8.257120
+            text = "<usb>"
+        intervals [32]:
+            xmin = 8.257120
+            xmax = 8.327120
+            text = "z"
+        intervals [33]:
+            xmin = 8.327120
+            xmax = 8.377120
+            text = "I"
+        intervals [34]:
+            xmin = 8.377120
+            xmax = 8.447120
+            text = "s"
+        intervals [35]:
+            xmin = 8.447120
+            xmax = 8.547120
+            text = "d"
+        intervals [36]:
+            xmin = 8.547120
+            xmax = 8.647120
+            text = "i:"
+        intervals [37]:
+            xmin = 8.647120
+            xmax = 8.757120
+            text = "z"
+        intervals [38]:
+            xmin = 8.757120
+            xmax = 8.867120
+            text = "@"
+        intervals [39]:
+            xmin = 8.867120
+            xmax = 8.957120
+            text = "z"
+        intervals [40]:
+            xmin = 8.957120
+            xmax = 9.077120
+            text = "o"
+        intervals [41]:
+            xmin = 9.077120
+            xmax = 9.227120
+            text = "m"
+        intervals [42]:
+            xmin = 9.227120
+            xmax = 9.487120
+            text = "m"
+        intervals [43]:
+            xmin = 9.487120
+            xmax = 10.937120
+            text = "<usb>"
+        intervals [44]:
+            xmin = 10.937120
+            xmax = 10.977120
+            text = "g"
+        intervals [45]:
+            xmin = 10.977120
+            xmax = 11.067120
+            text = "U"
+        intervals [46]:
+            xmin = 11.067120
+            xmax = 11.117120
+            text = "m"
+        intervals [47]:
+            xmin = 11.117120
+            xmax = 11.257120
+            text = "i:"
+        intervals [48]:
+            xmin = 11.257120
+            xmax = 11.357120
+            text = "<p:>"
+        intervals [49]:
+            xmin = 11.357120
+            xmax = 11.447120
+            text = "k"
+        intervals [50]:
+            xmin = 11.447120
+            xmax = 11.607120
+            text = "6"
+        intervals [51]:
+            xmin = 11.607120
+            xmax = 11.787120
+            text = "s"
+        intervals [52]:
+            xmin = 11.787120
+            xmax = 11.957120
+            text = "E:"
+        intervals [53]:
+            xmin = 11.957120
+            xmax = 11.987120
+            text = "6"
+        intervals [54]:
+            xmin = 11.987120
+            xmax = 13.927120
+            text = "<usb>"
+        intervals [55]:
+            xmin = 13.927120
+            xmax = 14.087120
+            text = "<usb>"
+        intervals [56]:
+            xmin = 14.087120
+            xmax = 14.237120
+            text = "z"
+        intervals [57]:
+            xmin = 14.237120
+            xmax = 14.507120
+            text = "@"
+        intervals [58]:
+            xmin = 14.507120
+            xmax = 14.547120
+            text = "n"
+        intervals [59]:
+            xmin = 14.547120
+            xmax = 14.987120
+            text = "a:"
+        intervals [60]:
+            xmin = 14.987120
+            xmax = 15.917120
+            text = "<usb>"
+        intervals [61]:
+            xmin = 15.917120
+            xmax = 16.017120
+            text = "O"
+        intervals [62]:
+            xmin = 16.017120
+            xmax = 16.077120
+            text = "m"
+        intervals [63]:
+            xmin = 16.077120
+            xmax = 16.267120
+            text = "O"
+        intervals [64]:
+            xmin = 16.267120
+            xmax = 16.547120
+            text = "6"
+        intervals [65]:
+            xmin = 16.547120
+            xmax = 16.707120
+            text = "s"
+        intervals [66]:
+            xmin = 16.707120
+            xmax = 16.967120
+            text = "a:"
+        intervals [67]:
+            xmin = 16.967120
+            xmax = 17.987120
+            text = "<usb>"
+        intervals [68]:
+            xmin = 17.987120
+            xmax = 18.157120
+            text = "E"
+        intervals [69]:
+            xmin = 18.157120
+            xmax = 18.277120
+            text = "6"
+        intervals [70]:
+            xmin = 18.277120
+            xmax = 18.417120
+            text = "f"
+        intervals [71]:
+            xmin = 18.417120
+            xmax = 18.547120
+            text = "k"
+        intervals [72]:
+            xmin = 18.547120
+            xmax = 18.957120
+            text = "6"
+        intervals [73]:
+            xmin = 18.957120
+            xmax = 19.007120
+            text = "g"
+        intervals [74]:
+            xmin = 19.007120
+            xmax = 19.197120
+            text = "@"
+        intervals [75]:
+            xmin = 19.197120
+            xmax = 19.227120
+            text = "n"
+        intervals [76]:
+            xmin = 19.227120
+            xmax = 19.357098
+            text = "<p:>"
