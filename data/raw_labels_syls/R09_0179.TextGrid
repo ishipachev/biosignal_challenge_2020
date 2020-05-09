@@ -1,0 +1,646 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 19.229773
+tiers? <exists> 
+size = 1
+item []:
+    item [1]:
+        class = "IntervalTier"
+        name = "MAU"
+        xmin = 0
+        xmax = 19.229773
+        intervals: size = 158
+        intervals [1]:
+            xmin = 0.000000
+            xmax = 0.037120
+            text = "silence"
+        intervals [2]:
+            xmin = 0.037120
+            xmax = 0.137120
+            text = "noise"
+        intervals [3]:
+            xmin = 0.137120
+            xmax = 0.167120
+            text = "vowel"
+        intervals [4]:
+            xmin = 0.167120
+            xmax = 0.197120
+            text = "fricative"
+        intervals [5]:
+            xmin = 0.197120
+            xmax = 0.297120
+            text = "vowel"
+        intervals [6]:
+            xmin = 0.297120
+            xmax = 0.347120
+            text = "plosive"
+        intervals [7]:
+            xmin = 0.347120
+            xmax = 0.427120
+            text = "vowel"
+        intervals [8]:
+            xmin = 0.427120
+            xmax = 0.607120
+            text = "approximant"
+        intervals [9]:
+            xmin = 0.607120
+            xmax = 0.707120
+            text = "nasal"
+        intervals [10]:
+            xmin = 0.707120
+            xmax = 0.767120
+            text = "vowel"
+        intervals [11]:
+            xmin = 0.767120
+            xmax = 0.817120
+            text = "nasal"
+        intervals [12]:
+            xmin = 0.817120
+            xmax = 1.267120
+            text = "vowel"
+        intervals [13]:
+            xmin = 1.267120
+            xmax = 1.957120
+            text = "noise"
+        intervals [14]:
+            xmin = 1.957120
+            xmax = 2.147120
+            text = "vowel"
+        intervals [15]:
+            xmin = 2.147120
+            xmax = 2.197120
+            text = "vowel"
+        intervals [16]:
+            xmin = 2.197120
+            xmax = 2.237120
+            text = "vowel"
+        intervals [17]:
+            xmin = 2.237120
+            xmax = 2.267120
+            text = "plosive"
+        intervals [18]:
+            xmin = 2.267120
+            xmax = 2.337120
+            text = "vowel"
+        intervals [19]:
+            xmin = 2.337120
+            xmax = 2.407120
+            text = "nasal"
+        intervals [20]:
+            xmin = 2.407120
+            xmax = 2.537120
+            text = "vowel"
+        intervals [21]:
+            xmin = 2.537120
+            xmax = 2.677120
+            text = "vowel"
+        intervals [22]:
+            xmin = 2.677120
+            xmax = 2.827120
+            text = "fricative"
+        intervals [23]:
+            xmin = 2.827120
+            xmax = 2.937120
+            text = "vowel"
+        intervals [24]:
+            xmin = 2.937120
+            xmax = 2.977120
+            text = "vowel"
+        intervals [25]:
+            xmin = 2.977120
+            xmax = 3.037120
+            text = "vowel"
+        intervals [26]:
+            xmin = 3.037120
+            xmax = 3.117120
+            text = "fricative"
+        intervals [27]:
+            xmin = 3.117120
+            xmax = 3.197120
+            text = "trill"
+        intervals [28]:
+            xmin = 3.197120
+            xmax = 3.377120
+            text = "vowel"
+        intervals [29]:
+            xmin = 3.377120
+            xmax = 3.407120
+            text = "vowel"
+        intervals [30]:
+            xmin = 3.407120
+            xmax = 3.507120
+            text = "fricative"
+        intervals [31]:
+            xmin = 3.507120
+            xmax = 3.557120
+            text = "trill"
+        intervals [32]:
+            xmin = 3.557120
+            xmax = 3.637120
+            text = "trill"
+        intervals [33]:
+            xmin = 3.637120
+            xmax = 3.707120
+            text = "vowel"
+        intervals [34]:
+            xmin = 3.707120
+            xmax = 3.807120
+            text = "fricative"
+        intervals [35]:
+            xmin = 3.807120
+            xmax = 3.847120
+            text = "trill"
+        intervals [36]:
+            xmin = 3.847120
+            xmax = 4.017120
+            text = "vowel"
+        intervals [37]:
+            xmin = 4.017120
+            xmax = 4.317120
+            text = "noise"
+        intervals [38]:
+            xmin = 4.317120
+            xmax = 4.397120
+            text = "vowel"
+        intervals [39]:
+            xmin = 4.397120
+            xmax = 4.467120
+            text = "vowel"
+        intervals [40]:
+            xmin = 4.467120
+            xmax = 4.517120
+            text = "trill"
+        intervals [41]:
+            xmin = 4.517120
+            xmax = 4.577120
+            text = "diphthong"
+        intervals [42]:
+            xmin = 4.577120
+            xmax = 4.657120
+            text = "vowel"
+        intervals [43]:
+            xmin = 4.657120
+            xmax = 4.747120
+            text = "fricative"
+        intervals [44]:
+            xmin = 4.747120
+            xmax = 4.927120
+            text = "vowel"
+        intervals [45]:
+            xmin = 4.927120
+            xmax = 5.007120
+            text = "nasal"
+        intervals [46]:
+            xmin = 5.007120
+            xmax = 5.197120
+            text = "lateral-approximant"
+        intervals [47]:
+            xmin = 5.197120
+            xmax = 5.427120
+            text = "noise"
+        intervals [48]:
+            xmin = 5.427120
+            xmax = 5.587120
+            text = "noise"
+        intervals [49]:
+            xmin = 5.587120
+            xmax = 5.697120
+            text = "noise"
+        intervals [50]:
+            xmin = 5.697120
+            xmax = 5.797120
+            text = "noise"
+        intervals [51]:
+            xmin = 5.797120
+            xmax = 5.937120
+            text = "approximant"
+        intervals [52]:
+            xmin = 5.937120
+            xmax = 6.047120
+            text = "vowel"
+        intervals [53]:
+            xmin = 6.047120
+            xmax = 6.087120
+            text = "trill"
+        intervals [54]:
+            xmin = 6.087120
+            xmax = 6.147120
+            text = "vowel"
+        intervals [55]:
+            xmin = 6.147120
+            xmax = 6.297120
+            text = "vowel"
+        intervals [56]:
+            xmin = 6.297120
+            xmax = 6.477120
+            text = "noise"
+        intervals [57]:
+            xmin = 6.477120
+            xmax = 6.527120
+            text = "vowel"
+        intervals [58]:
+            xmin = 6.527120
+            xmax = 7.447120
+            text = "noise"
+        intervals [59]:
+            xmin = 7.447120
+            xmax = 7.617120
+            text = "vowel"
+        intervals [60]:
+            xmin = 7.617120
+            xmax = 7.667120
+            text = "trill"
+        intervals [61]:
+            xmin = 7.667120
+            xmax = 7.797120
+            text = "noise"
+        intervals [62]:
+            xmin = 7.797120
+            xmax = 7.897120
+            text = "fricative"
+        intervals [63]:
+            xmin = 7.897120
+            xmax = 7.937120
+            text = "vowel"
+        intervals [64]:
+            xmin = 7.937120
+            xmax = 7.977120
+            text = "plosive"
+        intervals [65]:
+            xmin = 7.977120
+            xmax = 8.137120
+            text = "vowel"
+        intervals [66]:
+            xmin = 8.137120
+            xmax = 8.287120
+            text = "vowel"
+        intervals [67]:
+            xmin = 8.287120
+            xmax = 8.377120
+            text = "fricative"
+        intervals [68]:
+            xmin = 8.377120
+            xmax = 8.437120
+            text = "plosive"
+        intervals [69]:
+            xmin = 8.437120
+            xmax = 8.487120
+            text = "plosive"
+        intervals [70]:
+            xmin = 8.487120
+            xmax = 8.567120
+            text = "vowel"
+        intervals [71]:
+            xmin = 8.567120
+            xmax = 8.667120
+            text = "fricative"
+        intervals [72]:
+            xmin = 8.667120
+            xmax = 8.707120
+            text = "vowel"
+        intervals [73]:
+            xmin = 8.707120
+            xmax = 8.807120
+            text = "fricative"
+        intervals [74]:
+            xmin = 8.807120
+            xmax = 8.857120
+            text = "vowel"
+        intervals [75]:
+            xmin = 8.857120
+            xmax = 8.887120
+            text = "vowel"
+        intervals [76]:
+            xmin = 8.887120
+            xmax = 8.957120
+            text = "fricative"
+        intervals [77]:
+            xmin = 8.957120
+            xmax = 9.117120
+            text = "vowel"
+        intervals [78]:
+            xmin = 9.117120
+            xmax = 9.307120
+            text = "nasal"
+        intervals [79]:
+            xmin = 9.307120
+            xmax = 10.027120
+            text = "noise"
+        intervals [80]:
+            xmin = 10.027120
+            xmax = 10.077120
+            text = "vowel"
+        intervals [81]:
+            xmin = 10.077120
+            xmax = 10.217120
+            text = "plosive"
+        intervals [82]:
+            xmin = 10.217120
+            xmax = 10.267120
+            text = "vowel"
+        intervals [83]:
+            xmin = 10.267120
+            xmax = 10.357120
+            text = "vowel"
+        intervals [84]:
+            xmin = 10.357120
+            xmax = 10.407120
+            text = "nasal"
+        intervals [85]:
+            xmin = 10.407120
+            xmax = 10.507120
+            text = "fricative"
+        intervals [86]:
+            xmin = 10.507120
+            xmax = 10.547120
+            text = "vowel"
+        intervals [87]:
+            xmin = 10.547120
+            xmax = 10.627120
+            text = "vowel"
+        intervals [88]:
+            xmin = 10.627120
+            xmax = 10.657120
+            text = "lateral-approximant"
+        intervals [89]:
+            xmin = 10.657120
+            xmax = 10.747120
+            text = "vowel"
+        intervals [90]:
+            xmin = 10.747120
+            xmax = 10.797120
+            text = "fricative"
+        intervals [91]:
+            xmin = 10.797120
+            xmax = 10.837120
+            text = "vowel"
+        intervals [92]:
+            xmin = 10.837120
+            xmax = 10.897120
+            text = "plosive"
+        intervals [93]:
+            xmin = 10.897120
+            xmax = 11.127120
+            text = "vowel"
+        intervals [94]:
+            xmin = 11.127120
+            xmax = 11.217120
+            text = "vowel"
+        intervals [95]:
+            xmin = 11.217120
+            xmax = 11.257120
+            text = "fricative"
+        intervals [96]:
+            xmin = 11.257120
+            xmax = 12.127120
+            text = "noise"
+        intervals [97]:
+            xmin = 12.127120
+            xmax = 12.197120
+            text = "approximant"
+        intervals [98]:
+            xmin = 12.197120
+            xmax = 12.247120
+            text = "fricative"
+        intervals [99]:
+            xmin = 12.247120
+            xmax = 12.387120
+            text = "fricative"
+        intervals [100]:
+            xmin = 12.387120
+            xmax = 12.527120
+            text = "nasal"
+        intervals [101]:
+            xmin = 12.527120
+            xmax = 12.677120
+            text = "vowel"
+        intervals [102]:
+            xmin = 12.677120
+            xmax = 12.737120
+            text = "fricative"
+        intervals [103]:
+            xmin = 12.737120
+            xmax = 12.887120
+            text = "noise"
+        intervals [104]:
+            xmin = 12.887120
+            xmax = 12.997120
+            text = "vowel"
+        intervals [105]:
+            xmin = 12.997120
+            xmax = 13.227120
+            text = "vowel"
+        intervals [106]:
+            xmin = 13.227120
+            xmax = 13.807120
+            text = "noise"
+        intervals [107]:
+            xmin = 13.807120
+            xmax = 13.887120
+            text = "vowel"
+        intervals [108]:
+            xmin = 13.887120
+            xmax = 13.967120
+            text = "fricative"
+        intervals [109]:
+            xmin = 13.967120
+            xmax = 14.057120
+            text = "vowel"
+        intervals [110]:
+            xmin = 14.057120
+            xmax = 14.157120
+            text = "vowel"
+        intervals [111]:
+            xmin = 14.157120
+            xmax = 14.227120
+            text = "vowel"
+        intervals [112]:
+            xmin = 14.227120
+            xmax = 14.297120
+            text = "fricative"
+        intervals [113]:
+            xmin = 14.297120
+            xmax = 14.377120
+            text = "fricative"
+        intervals [114]:
+            xmin = 14.377120
+            xmax = 14.407120
+            text = "fricative"
+        intervals [115]:
+            xmin = 14.407120
+            xmax = 14.447120
+            text = "vowel"
+        intervals [116]:
+            xmin = 14.447120
+            xmax = 14.517120
+            text = "fricative"
+        intervals [117]:
+            xmin = 14.517120
+            xmax = 14.597120
+            text = "vowel"
+        intervals [118]:
+            xmin = 14.597120
+            xmax = 14.667120
+            text = "plosive"
+        intervals [119]:
+            xmin = 14.667120
+            xmax = 14.827120
+            text = "approximant"
+        intervals [120]:
+            xmin = 14.827120
+            xmax = 15.037120
+            text = "vowel"
+        intervals [121]:
+            xmin = 15.037120
+            xmax = 15.137120
+            text = "vowel"
+        intervals [122]:
+            xmin = 15.137120
+            xmax = 15.217120
+            text = "nasal"
+        intervals [123]:
+            xmin = 15.217120
+            xmax = 15.277120
+            text = "vowel"
+        intervals [124]:
+            xmin = 15.277120
+            xmax = 15.597120
+            text = "noise"
+        intervals [125]:
+            xmin = 15.597120
+            xmax = 16.077120
+            text = "noise"
+        intervals [126]:
+            xmin = 16.077120
+            xmax = 16.117120
+            text = "fricative"
+        intervals [127]:
+            xmin = 16.117120
+            xmax = 16.187120
+            text = "vowel"
+        intervals [128]:
+            xmin = 16.187120
+            xmax = 16.247120
+            text = "lateral-approximant"
+        intervals [129]:
+            xmin = 16.247120
+            xmax = 16.337120
+            text = "vowel"
+        intervals [130]:
+            xmin = 16.337120
+            xmax = 16.437120
+            text = "noise"
+        intervals [131]:
+            xmin = 16.437120
+            xmax = 16.587120
+            text = "vowel"
+        intervals [132]:
+            xmin = 16.587120
+            xmax = 16.677120
+            text = "fricative"
+        intervals [133]:
+            xmin = 16.677120
+            xmax = 16.747120
+            text = "nasal"
+        intervals [134]:
+            xmin = 16.747120
+            xmax = 17.007120
+            text = "vowel"
+        intervals [135]:
+            xmin = 17.007120
+            xmax = 17.247120
+            text = "vowel"
+        intervals [136]:
+            xmin = 17.247120
+            xmax = 17.357120
+            text = "vowel"
+        intervals [137]:
+            xmin = 17.357120
+            xmax = 17.477120
+            text = "vowel"
+        intervals [138]:
+            xmin = 17.477120
+            xmax = 17.567120
+            text = "fricative"
+        intervals [139]:
+            xmin = 17.567120
+            xmax = 17.767120
+            text = "noise"
+        intervals [140]:
+            xmin = 17.767120
+            xmax = 17.847120
+            text = "vowel"
+        intervals [141]:
+            xmin = 17.847120
+            xmax = 17.877120
+            text = "nasal"
+        intervals [142]:
+            xmin = 17.877120
+            xmax = 17.927120
+            text = "plosive"
+        intervals [143]:
+            xmin = 17.927120
+            xmax = 18.017120
+            text = "plosive"
+        intervals [144]:
+            xmin = 18.017120
+            xmax = 18.087120
+            text = "nasal"
+        intervals [145]:
+            xmin = 18.087120
+            xmax = 18.197120
+            text = "noise"
+        intervals [146]:
+            xmin = 18.197120
+            xmax = 18.277120
+            text = "nasal"
+        intervals [147]:
+            xmin = 18.277120
+            xmax = 18.327120
+            text = "lateral-approximant"
+        intervals [148]:
+            xmin = 18.327120
+            xmax = 18.437120
+            text = "vowel"
+        intervals [149]:
+            xmin = 18.437120
+            xmax = 18.537120
+            text = "fricative"
+        intervals [150]:
+            xmin = 18.537120
+            xmax = 18.577120
+            text = "vowel"
+        intervals [151]:
+            xmin = 18.577120
+            xmax = 18.607120
+            text = "trill"
+        intervals [152]:
+            xmin = 18.607120
+            xmax = 18.647120
+            text = "vowel"
+        intervals [153]:
+            xmin = 18.647120
+            xmax = 18.817120
+            text = "plosive"
+        intervals [154]:
+            xmin = 18.817120
+            xmax = 18.937120
+            text = "vowel"
+        intervals [155]:
+            xmin = 18.937120
+            xmax = 18.977120
+            text = "vowel"
+        intervals [156]:
+            xmin = 18.977120
+            xmax = 19.067120
+            text = "fricative"
+        intervals [157]:
+            xmin = 19.067120
+            xmax = 19.177120
+            text = "noise"
+        intervals [158]:
+            xmin = 19.177120
+            xmax = 19.229773
+            text = "silence"
