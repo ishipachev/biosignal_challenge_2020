@@ -1,5 +1,7 @@
 tgFolder = '../data/processed_labels/picked_only_vows';
-wavFolder = '../data/wavs';
+wavsFolder = '../data/wavs';
+
+params = loadparams();
 
 %%
 % ads = audioDatastore(wavFolder);
@@ -74,9 +76,9 @@ wavFolder = '../data/wavs';
 % 
 % maskValidation = tg2mask(tgFilename, fs, numel(s_val));
 
-numFiles = 15;
-rng(46);
-[featuresTraining, maskTraining, featuresValidation, maskValidation, s_trn, s_val] = wavs2feats(wavFolder, tgFolder, numFiles);
+numFiles = params.numFiles;
+rng(params.rng);
+[featuresTraining, maskTraining, featuresValidation, maskValidation, s_trn, s_val] = wavs2feats(wavsFolder, tgFolder, numFiles);
   
 %%
 params = loadparams();
@@ -105,8 +107,7 @@ for index = 1:numel(range)
 end
 maskValidation = maskMode.';
 maskValidationCat = categorical(maskValidation);
-
-sequenceLength = 100;
+sequenceLength = params.sequenceLength;
 sequenceOverlap = round(0.75*sequenceLength);
 
 trainFeatureCell = helperFeatureVector2Sequence(featuresTraining',sequenceLength,sequenceOverlap);
@@ -117,28 +118,28 @@ trainLabelCell = helperFeatureVector2Sequence(maskTrainingCat',sequenceLength,se
 layers = [ ...    
     sequenceInputLayer( size(featuresValidation,2) )    
     bilstmLayer(200,"OutputMode","sequence")
-%     dropoutLayer(0.5)
+%     dropoutLayer(0.25)
     bilstmLayer(200,"OutputMode","sequence")   
-%     dropoutLayer(0.5)
+%     dropoutLayer(0.25)
     fullyConnectedLayer(2)   
     softmaxLayer   
     classificationLayer      
     ];
   
-maxEpochs = 10;
-miniBatchSize = 4;
 options = trainingOptions("adam", ...
-    "MaxEpochs",maxEpochs, ...
-    "MiniBatchSize",miniBatchSize, ...
+    "MaxEpochs",params.train.maxEpochs, ...
+    "MiniBatchSize",params.train.miniBatchSize, ...
     "Shuffle","every-epoch", ...     %"Shuffle", "never",
     "Verbose",0, ...
     "SequenceLength",sequenceLength, ...
-    "ValidationFrequency",floor(numel(trainFeatureCell)/miniBatchSize), ...
+    "ValidationFrequency",floor(numel(trainFeatureCell)/params.train.miniBatchSize), ...
     "ValidationData",{featuresValidation.',maskValidationCat.'}, ...
     "Plots","training-progress", ...
-    "LearnRateSchedule","piecewise", ...
-    "LearnRateDropFactor",1, ...
-    "LearnRateDropPeriod",4);
+    "ExecutionEnvironment", "gpu", ...
+    "LearnRateSchedule","piecewise"); %, ...
+%     "LearnRateDropFactor",1, ...
+%     "LearnRateDropPeriod",4);
+
   
 doTraining = true;
 if doTraining
@@ -160,7 +161,7 @@ cm.RowSummary = "row-normalized";
 
 figure;
 hold on;
-plot(s_val(1:128:end));
+plot(s_val(1:256:end));
 plot(EstimatedVADMask, 'LineWidth', 2);
 plot(maskValidation * 0.8, 'g', 'LineWidth', 2);
 hold off;
@@ -184,16 +185,6 @@ hold off;
 
 %% Helper Functions
 
-%Function to normalize the output
-function s = soundNormalize(s)
-  s = s / max(abs(s));
-end
-
-%Function to normalize features
-function f = featNormalize(f)
-  f = normalize(f, 2);
-end
-  
 % Convert Feature Vectors to Sequences
 function [sequences,sequencePerFile] = helperFeatureVector2Sequence(features,featureVectorsPerSequence,featureVectorOverlap)
     if featureVectorsPerSequence <= featureVectorOverlap
