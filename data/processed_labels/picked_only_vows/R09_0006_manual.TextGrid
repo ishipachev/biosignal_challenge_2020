@@ -8,12 +8,6 @@ size = 2
 item []: 
     item [1]:
         class = "IntervalTier" 
-        name = "Layer1" 
-        xmin = 0 
-        xmax = 22.5239 
-        intervals: size = 0: 
-    item [2]:
-        class = "IntervalTier" 
         name = "MAU" 
         xmin = 0 
         xmax = 22.5239 
@@ -132,10 +126,10 @@ item []:
             text = "" 
         intervals [29]:
             xmin = 6.95712 
-            xmax = 7.136149 
+            xmax = 7.136148 
             text = "v" 
         intervals [30]:
-            xmin = 7.136149 
+            xmin = 7.136148 
             xmax = 7.23712 
             text = "" 
         intervals [31]:
@@ -204,18 +198,18 @@ item []:
             text = "" 
         intervals [47]:
             xmin = 8.817121 
-            xmax = 8.925473 
+            xmax = 8.925472 
             text = "v" 
         intervals [48]:
-            xmin = 8.925473 
+            xmin = 8.925472 
             xmax = 9.047052 
             text = "" 
         intervals [49]:
             xmin = 9.047052 
-            xmax = 9.158058 
+            xmax = 9.158057 
             text = "v" 
         intervals [50]:
-            xmin = 9.158058 
+            xmin = 9.158057 
             xmax = 9.187132 
             text = "" 
         intervals [51]:
@@ -502,3 +496,73 @@ item []:
             xmin = 22.43691 
             xmax = 22.5239 
             text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "MAU2" 
+        xmin = 0 
+        xmax = 22.5239 
+        intervals: size = 16: 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.9042398 
+            text = "" 
+        intervals [2]:
+            xmin = 0.9042398 
+            xmax = 2.522353 
+            text = "s" 
+        intervals [3]:
+            xmin = 2.522353 
+            xmax = 3.448226 
+            text = "" 
+        intervals [4]:
+            xmin = 3.448226 
+            xmax = 4.724545 
+            text = "s" 
+        intervals [5]:
+            xmin = 4.724545 
+            xmax = 6.074415 
+            text = "" 
+        intervals [6]:
+            xmin = 6.074415 
+            xmax = 10.11105 
+            text = "s" 
+        intervals [7]:
+            xmin = 10.11105 
+            xmax = 10.77733 
+            text = "" 
+        intervals [8]:
+            xmin = 10.77733 
+            xmax = 12.53822 
+            text = "s" 
+        intervals [9]:
+            xmin = 12.53822 
+            xmax = 13.80588 
+            text = "" 
+        intervals [10]:
+            xmin = 13.80588 
+            xmax = 15.74848 
+            text = "s" 
+        intervals [11]:
+            xmin = 15.74848 
+            xmax = 16.78252 
+            text = "" 
+        intervals [12]:
+            xmin = 16.78252 
+            xmax = 17.76464 
+            text = "s" 
+        intervals [13]:
+            xmin = 17.76464 
+            xmax = 18.40063 
+            text = "" 
+        intervals [14]:
+            xmin = 18.40063 
+            xmax = 19.04528 
+            text = "s" 
+        intervals [15]:
+            xmin = 19.04528 
+            xmax = 19.5212 
+            text = "" 
+        intervals [16]:
+            xmin = 19.5212 
+            xmax = 22.5239 
+            text = "s" 

@@ -4,7 +4,7 @@ Object class = "TextGrid"
 xmin = 0 
 xmax = 30.24683 
 tiers? <exists> 
-size = 1 
+size = 2 
 item []: 
     item [1]:
         class = "IntervalTier" 
@@ -170,18 +170,18 @@ item []:
             text = "" 
         intervals [40]:
             xmin = 9.393206 
-            xmax = 9.488231 
+            xmax = 9.488232 
             text = "v" 
         intervals [41]:
-            xmin = 9.488231 
+            xmin = 9.488232 
             xmax = 9.599884 
             text = "" 
         intervals [42]:
             xmin = 9.599884 
-            xmax = 9.73292 
+            xmax = 9.732921 
             text = "v" 
         intervals [43]:
-            xmin = 9.73292 
+            xmin = 9.732921 
             xmax = 9.88971 
             text = "" 
         intervals [44]:
@@ -454,5 +454,127 @@ item []:
             text = "v" 
         intervals [111]:
             xmin = 30.05962 
+            xmax = 30.24683 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "MAU2" 
+        xmin = 0 
+        xmax = 30.24683 
+        intervals: size = 29: 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.1142396 
+            text = "" 
+        intervals [2]:
+            xmin = 0.1142396 
+            xmax = 1.01712 
+            text = "s" 
+        intervals [3]:
+            xmin = 1.01712 
+            xmax = 1.744955 
+            text = "" 
+        intervals [4]:
+            xmin = 1.744955 
+            xmax = 2.844791 
+            text = "s" 
+        intervals [5]:
+            xmin = 2.844791 
+            xmax = 3.523509 
+            text = "" 
+        intervals [6]:
+            xmin = 3.523509 
+            xmax = 4.609906 
+            text = "s" 
+        intervals [7]:
+            xmin = 4.609906 
+            xmax = 4.880945 
+            text = "" 
+        intervals [8]:
+            xmin = 4.880945 
+            xmax = 5.647858 
+            text = "s" 
+        intervals [9]:
+            xmin = 5.647858 
+            xmax = 8.787493 
+            text = "" 
+        intervals [10]:
+            xmin = 8.787493 
+            xmax = 8.964453 
+            text = "s" 
+        intervals [11]:
+            xmin = 8.964453 
+            xmax = 9.208611 
+            text = "" 
+        intervals [12]:
+            xmin = 9.208611 
+            xmax = 9.488594 
+            text = "s" 
+        intervals [13]:
+            xmin = 9.488594 
+            xmax = 9.578211 
+            text = "" 
+        intervals [14]:
+            xmin = 9.578211 
+            xmax = 10.06877 
+            text = "s" 
+        intervals [15]:
+            xmin = 10.06877 
+            xmax = 10.69149 
+            text = "" 
+        intervals [16]:
+            xmin = 10.69149 
+            xmax = 10.97373 
+            text = "s" 
+        intervals [17]:
+            xmin = 10.97373 
+            xmax = 13.8006 
+            text = "" 
+        intervals [18]:
+            xmin = 13.8006 
+            xmax = 14.48604 
+            text = "s" 
+        intervals [19]:
+            xmin = 14.48604 
+            xmax = 15.23195 
+            text = "" 
+        intervals [20]:
+            xmin = 15.23195 
+            xmax = 15.71354 
+            text = "s" 
+        intervals [21]:
+            xmin = 15.71354 
+            xmax = 18.16186 
+            text = "" 
+        intervals [22]:
+            xmin = 18.16186 
+            xmax = 20.37498 
+            text = "s" 
+        intervals [23]:
+            xmin = 20.37498 
+            xmax = 23.19065 
+            text = "" 
+        intervals [24]:
+            xmin = 23.19065 
+            xmax = 23.87385 
+            text = "s" 
+        intervals [25]:
+            xmin = 23.87385 
+            xmax = 25.54676 
+            text = "" 
+        intervals [26]:
+            xmin = 25.54676 
+            xmax = 27.00092 
+            text = "s" 
+        intervals [27]:
+            xmin = 27.00092 
+            xmax = 27.63316 
+            text = "" 
+        intervals [28]:
+            xmin = 27.63316 
+            xmax = 30.07361 
+            text = "s" 
+        intervals [29]:
+            xmin = 30.07361 
             xmax = 30.24683 
             text = "" 
