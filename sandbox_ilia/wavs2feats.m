@@ -1,7 +1,9 @@
 function [featsTrn, ... 
           maskTrn, ...
           featsVal, ... 
-          maskVal] = wavs2feats(wavsFolder, tgFolder, numFiles)
+          maskVal, ...
+          s_trn, ...
+          s_val] = wavs2feats(wavsFolder, tgFolder, numFiles)
 % Transoforms wavs files into train and validation features with masks
 
 % ads = audioDatastore(wavFolder);
@@ -19,33 +21,36 @@ filesTrn = filelist(sfl(1:trainSize));
 filesVal = filelist(sfl(trainSize+1:end));
 
 
-[featsTrn, maskTrn] = list2feats(filesTrn, tgFolder, params);
-[featsVal, maskVal] = list2feats(filesVal, tgFolder, params);
+[featsTrn, maskTrn, s_trn] = list2feats(filesTrn, tgFolder, params);
+[featsVal, maskVal, s_val] = list2feats(filesVal, tgFolder, params);
 
 end
 
 %% Helper Functions
-function [feats, mask] = list2feats(fileList, tgFolder, params)
+function [feats, mask, full_s] = list2feats(fileList, tgFolder, params)
   N = numel(fileList);
   feats = [];
   mask = [];
+  full_s = [];
   for i = 1:N
-    filename = fileList(i).name;
+    filename = fullfile(fileList(i).folder, fileList(i).name);
     [s, fs] = audioread(filename);
     assert(params.afe.SampleRate == fs, ...
       "Sample rate of feature extractor doesn't match sample rate of file"); 
     s = soundNormalize(s);
-
-    feats = [feats extract(params.afe, s)];
+    full_s = [full_s; s];
+    
+    feats = [feats; extract(params.afe, s)];
     
     [folder, name, ext] = fileparts(filename);
     addition = '_manual';
     ext = '.TextGrid';
     tgFilename = fullfile(tgFolder, [name addition ext]);
     
-    mask = [mask tg2mask(tgFilename, fs, numel(s))];    
+    mask = [mask; tg2mask(tgFilename, fs, numel(s))];    
   end
   
+  feats = featNormalize(feats);
 end
 
 %Function to normalize the output
@@ -55,5 +60,6 @@ end
 
 %Function to normalize features
 function f = featNormalize(f)
+  warning("Правильно ли?");
   f = normalize(f, 2);
 end
