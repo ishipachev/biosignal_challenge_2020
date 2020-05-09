@@ -4,7 +4,7 @@ Object class = "TextGrid"
 xmin = 0 
 xmax = 20.72839 
 tiers? <exists> 
-size = 1 
+size = 2 
 item []: 
     item [1]:
         class = "IntervalTier" 
@@ -338,5 +338,71 @@ item []:
             text = "v" 
         intervals [82]:
             xmin = 20.55521 
+            xmax = 20.72839 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "MAU2" 
+        xmin = 0 
+        xmax = 20.72839 
+        intervals: size = 15: 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.09388446 
+            text = "" 
+        intervals [2]:
+            xmin = 0.09388446 
+            xmax = 2.47229 
+            text = "s" 
+        intervals [3]:
+            xmin = 2.47229 
+            xmax = 3.233796 
+            text = "" 
+        intervals [4]:
+            xmin = 3.233796 
+            xmax = 5.685223 
+            text = "s" 
+        intervals [5]:
+            xmin = 5.685223 
+            xmax = 6.652878 
+            text = "" 
+        intervals [6]:
+            xmin = 6.652878 
+            xmax = 7.835001 
+            text = "s" 
+        intervals [7]:
+            xmin = 7.835001 
+            xmax = 8.219879 
+            text = "" 
+        intervals [8]:
+            xmin = 8.219879 
+            xmax = 9.237054 
+            text = "s" 
+        intervals [9]:
+            xmin = 9.237054 
+            xmax = 12.42604 
+            text = "" 
+        intervals [10]:
+            xmin = 12.42604 
+            xmax = 14.00678 
+            text = "s" 
+        intervals [11]:
+            xmin = 14.00678 
+            xmax = 18.42695 
+            text = "" 
+        intervals [12]:
+            xmin = 18.42695 
+            xmax = 19.417 
+            text = "s" 
+        intervals [13]:
+            xmin = 19.417 
+            xmax = 19.7328 
+            text = "" 
+        intervals [14]:
+            xmin = 19.7328 
+            xmax = 20.54362 
+            text = "s" 
+        intervals [15]:
+            xmin = 20.54362 
             xmax = 20.72839 
             text = "" 
