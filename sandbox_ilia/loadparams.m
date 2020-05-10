@@ -4,29 +4,29 @@ function params = loadparams()
 
 params.numFiles = 20;
 
-params.windowSize = 128;
-params.overlapLength = 64;
-params.fs = 44100;
-params.valProportion = 1/5;
+params.afeOpt.windowSize = 128;
+params.afeOpt.overlapLength = 64;
+params.afeOpt.fs = 44100;
+params.afeOpt.recompute = false;
 
+params.valProportion = 1/5;
 params.extendWindowMul = 3;
 % params.constShift = params.windowSize * 10;
 params.constShift = 0;
 
 params.rng = 46;
-params.sequenceLength = 100;
-params.train.maxEpochs = 3;
-params.train.miniBatchSize = 128;
+params.sequenceLength = 50;
+params.train.maxEpochs = 6;
+params.train.miniBatchSize = 32;
 
 params.train.RateDropFactor = 1;
 params.train.RateDropPeriod = 4;
 % params.train.InitialLearnRate = 0.01;
 
-params.afe = audioFeatureExtractor('SampleRate',params.fs, ...
-    'Window',hann(params.windowSize,"Periodic"), ...
-    'OverlapLength',params.overlapLength, ... 
-    'gtcc', true,... %    'mfcc', true, ...
-    'gtccDeltaDelta', true, ...
+
+params.afe = audioFeatureExtractor('SampleRate',params.afeOpt.fs, ...
+    'Window',hann(params.afeOpt.windowSize,"Periodic"), ...
+    'OverlapLength',params.afeOpt.overlapLength, ...  % 'gtcc', true,... % 'gtccDeltaDelta', true, ...
     ...
     'spectralCentroid',true, ...
     'spectralCrest',true, ...

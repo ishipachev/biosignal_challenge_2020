@@ -15,7 +15,7 @@ T1 = tgt.T1(cidx);
 T2 = tgt.T2(cidx);
 
 binMask = zeros(duration, 1);
-win = params.windowSize * params.extendWindowMul;
+win = params.afeOpt.windowSize * params.extendWindowMul;
 shift = params.constShift;
 for i = 1:numel(T1)
   start_idx = max(floor(T1(i) * fs) - win, 1) + shift;

@@ -4,3 +4,10 @@ data/wavs/*.wav
 
 # Ignore mPraat toolbox #
 mPraat/
+
+# Ignore Matlab's temporary files
+*.asv
+
+# Ignore precalculated features
+data/features/*.mat
+

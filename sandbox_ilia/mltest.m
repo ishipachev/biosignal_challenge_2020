@@ -1,86 +1,22 @@
 tgFolder = '../data/processed_labels/picked_only_vows';
 wavsFolder = '../data/wavs';
+featsFolder = '../data/features';
 
+%%
 params = loadparams();
-
-%%
-% ads = audioDatastore(wavFolder);
-
-%%
-% fname = 'R09_0006.wav';
-% fullfname = fullfile(wavFolder, fname);
-% 
-% [s_trn, fs] = audioread(fullfname); 
-% s_trn = soundNormalize(s_trn);
-% 
-% windowSize = 256;
-% overlapLength = 128;
-% 
-% afe = audioFeatureExtractor('SampleRate',fs, ...
-%     'Window',hann(windowSize,"Periodic"), ...
-%     'OverlapLength',overlapLength, ...
-%     ...
-%     'spectralCentroid',true, ...
-%     'spectralCrest',true, ...
-%     'spectralEntropy',true, ...
-%     'spectralFlux',true, ...
-%     'spectralKurtosis',true, ...
-%     'spectralRolloffPoint',true, ...
-%     'spectralSkewness',true, ...
-%     'spectralSlope',true, ...
-%     'harmonicRatio',true);
-%   
-% featuresTraining = extract(afe,s_trn);
-% featuresTraining = featNormalize(featuresTraining);
-% 
-% [numWindows,numFeatures] = size(featuresTraining);
-% 
-% [folder, name, ext] = fileparts(fullfname);
-% addition = '_manual';
-% ext = '.TextGrid';
-% tgFilename = fullfile(tgFolder, [name addition ext]);
-% 
-% maskTraining = tg2mask(tgFilename, fs, numel(s_trn));
-
-%%
-% fname = 'R09_0004.wav';
-% fullfname = fullfile(wavFolder, fname);
-% 
-% [s_val, fs] = audioread(fullfname); 
-% s_val = soundNormalize(s_val);
-% 
-% windowSize = 256;
-% overlapLength = 128;
-% 
-% afe = audioFeatureExtractor('SampleRate',fs, ...
-%     'Window',hann(windowSize,"Periodic"), ...
-%     'OverlapLength',overlapLength, ...
-%     ...
-%     'spectralCentroid',true, ...
-%     'spectralCrest',true, ...
-%     'spectralEntropy',true, ...
-%     'spectralFlux',true, ...
-%     'spectralKurtosis',true, ...
-%     'spectralRolloffPoint',true, ...
-%     'spectralSkewness',true, ...
-%     'spectralSlope',true, ...
-%     'harmonicRatio',true);
-%   
-% featuresValidation = extract(afe, s_val);
-% featuresValidation = featNormalize(featuresValidation);
-% 
-% [folder, name, ext] = fileparts(fullfname);
-% addition = '_manual';
-% ext = '.TextGrid';
-% tgFilename = fullfile(tgFolder, [name addition ext]);
-% 
-% maskValidation = tg2mask(tgFilename, fs, numel(s_val));
 
 numFiles = params.numFiles;
 rng(params.rng);
-[featuresTraining, maskTraining, featuresValidation, maskValidation, s_trn, s_val] = wavs2feats(wavsFolder, tgFolder, numFiles);
+
+[featuresTraining, ... 
+ maskTraining, ...
+ featuresValidation, ...
+ maskValidation, ...
+ s_trn, ...
+ s_val] = wavs2feats(wavsFolder, featsFolder, tgFolder, numFiles);
   
-%%
+%% Get structures adjusted for a learning procedure
+
 params = loadparams();
 afe = params.afe;
 
@@ -94,11 +30,6 @@ for index = 1:numel(range)
 end
 maskTraining = maskMode.';
 maskTrainingCat = categorical(maskTraining);
-
-%Get Validation Mask as categorical array
-% maskValidation = maskTraining;
-% featuresValidation = featuresTraining;
-% warning('Copy Mask Validation as Mask Training');
 
 range = (hopLength) * (1:size(featuresValidation,1)) + hopLength;
 maskMode = zeros(size(range));
@@ -163,7 +94,7 @@ cm.RowSummary = "row-normalized";
 
 figure;
 hold on;
-plot(s_val(1:params.overlapLength:end));
+plot(s_val(1:params.afeOpt.overlapLength:end));
 plot(EstimatedVADMask, 'LineWidth', 2);
 plot(maskValidation * 0.8, 'g', 'LineWidth', 2);
 hold off;

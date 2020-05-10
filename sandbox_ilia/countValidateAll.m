@@ -1,4 +1,4 @@
-function err_rate = countValidateAll(sylNet, wavsFolder, filerange)
+function err_rate = countValidateAll(sylNet, wavsFolder, featsFolder, filerange, params)
 %COUNTVALIDATEALL Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -6,12 +6,15 @@ fileList = dir(wavsFolder);
 fileList = fileList(3:end);
 
 load("../data/reference_data.mat", 'true_syl');
-params = loadparams();
+% params = loadparams();
 err_rate = NaN(numel(filerange), 3);
 file_cnt = 1;
 for i=filerange
   filename = fullfile(fileList(i).folder, fileList(i).name);
-  f = file2features(filename, params);
+  
+  [f, ~] = exctractOrLoadFeatures(filename, featsFolder, params);
+  
+%   f = file2features(filename, params);
   cnt = countSyls(sylNet, f);
   true_cnt = true_syl(i);
   err_rate(file_cnt, :) = [1 - abs(cnt/true_cnt - 1), cnt, true_cnt];
