@@ -118,9 +118,9 @@ trainLabelCell = helperFeatureVector2Sequence(maskTrainingCat',sequenceLength,se
 layers = [ ...    
     sequenceInputLayer( size(featuresValidation,2) )    
     bilstmLayer(200,"OutputMode","sequence")
-%     dropoutLayer(0.25)
+    dropoutLayer(0.25)
     bilstmLayer(200,"OutputMode","sequence")   
-%     dropoutLayer(0.25)
+    dropoutLayer(0.25)
     fullyConnectedLayer(2)   
     softmaxLayer   
     classificationLayer      
@@ -136,9 +136,9 @@ options = trainingOptions("adam", ...
     "ValidationData",{featuresValidation.',maskValidationCat.'}, ...
     "Plots","training-progress", ...
     "ExecutionEnvironment", "gpu", ...
-    "LearnRateSchedule","piecewise"); %, ...
-%     "LearnRateDropFactor",1, ...
-%     "LearnRateDropPeriod",4);
+    "LearnRateSchedule","piecewise", ... %); %, ...
+    "LearnRateDropFactor", params.train.RateDropFactor, ...
+    "LearnRateDropPeriod", params.train.RateDropPeriod);
 
   
 doTraining = true;
@@ -161,7 +161,7 @@ cm.RowSummary = "row-normalized";
 
 figure;
 hold on;
-plot(s_val(1:256:end));
+plot(s_val(1:params.overlapLength:end));
 plot(EstimatedVADMask, 'LineWidth', 2);
 plot(maskValidation * 0.8, 'g', 'LineWidth', 2);
 hold off;

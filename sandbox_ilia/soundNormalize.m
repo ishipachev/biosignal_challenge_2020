@@ -3,6 +3,6 @@ function s = soundNormalize(s, fs)
   s = s / max(abs(s));
 %   s = s / median(abs(s));
 
-  f0 = pitch(s, fs);
+%   f0 = pitch(s, fs);
   
 end

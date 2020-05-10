@@ -13,8 +13,8 @@ filelist = filelist(3:numFiles+2);
 params = loadparams();
 
 
-sfl = randperm(numFiles);
-% sfl = [3 10 11 14 1 2 4 5 6 7 8 9 16 17 18 19    12 13 15];
+% sfl = randperm(numFiles);
+sfl = [3 10 11 14 1 2 4 5 6 7 8 9 16 17 18 19 20    12 13 15 14];
 valSize = floor(params.valProportion * numFiles);
 trainSize = numFiles - valSize;
 
