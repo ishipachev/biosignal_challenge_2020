@@ -20,12 +20,15 @@ for i=filerange
   cnt = countSyls(sylNet, f);
   true_cnt = true_syl(i);
   
-%   errRate(file_cnt) = 1 - abs(cnt/true_cnt - 1);
-  errRate(file_cnt) = abs(cnt/true_cnt - 1);
+  errRate(file_cnt) = 1 - abs(cnt/true_cnt - 1);
+%   errRate(file_cnt) = abs(cnt/true_cnt - 1);
   sylCnt(file_cnt) = cnt;
   trueSylCnt(file_cnt) = true_cnt;
   
-  fprintf("Processed %d, out of %d\n", file_cnt, numel(filerange));
+  if rem(file_cnt, 10) == 0
+    fprintf("Processed %d, out of %d\n", file_cnt, numel(filerange));
+  end
+  
   file_cnt = file_cnt + 1;
 end
   
