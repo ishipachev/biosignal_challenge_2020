@@ -1,5 +1,5 @@
 wavsFolder = '../data/wavs';
-filerange = 20:100;
+filerange = 21:100;
 sylNet = speechDetectNet;
 
 err_rate = countValidateAll(sylNet, wavsFolder, filerange);

@@ -5,7 +5,7 @@ function params = loadparams()
 params.numFiles = 20;
 
 params.windowSize = 128;
-params.overlapLength = 32;
+params.overlapLength = 64;
 params.fs = 44100;
 params.valProportion = 1/5;
 
@@ -14,9 +14,9 @@ params.extendWindowMul = 3;
 params.constShift = 0;
 
 params.rng = 46;
-params.sequenceLength = 200;
-params.train.maxEpochs = 2;
-params.train.miniBatchSize = 4;
+params.sequenceLength = 100;
+params.train.maxEpochs = 3;
+params.train.miniBatchSize = 128;
 
 params.train.RateDropFactor = 1;
 params.train.RateDropPeriod = 4;
@@ -25,7 +25,8 @@ params.train.RateDropPeriod = 4;
 params.afe = audioFeatureExtractor('SampleRate',params.fs, ...
     'Window',hann(params.windowSize,"Periodic"), ...
     'OverlapLength',params.overlapLength, ... 
-    'gtcc', true,... %'mfcc', true, ...
+    'gtcc', true,... %    'mfcc', true, ...
+    'gtccDeltaDelta', true, ...
     ...
     'spectralCentroid',true, ...
     'spectralCrest',true, ...
