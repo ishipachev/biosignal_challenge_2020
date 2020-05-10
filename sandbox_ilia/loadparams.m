@@ -2,6 +2,12 @@ function params = loadparams()
 %LOADPARAMS Summary of this function goes here
 %   Detailed explanation goes here
 
+params.wavsFolder = '../data/wavs';
+params.featsFolder = '../data/features';
+params.featsFolder = '../data/features';
+params.checkpointFolder = 'checkpoints';
+params.tgFolder = '../data/processed_labels/picked_only_vows';
+
 params.numFiles = 20;
 
 params.afeOpt.windowSize = 128;
@@ -15,8 +21,8 @@ params.extendWindowMul = 3;
 params.constShift = 0;
 
 params.rng = 46;
-params.sequenceLength = 50;
-params.train.maxEpochs = 6;
+params.sequenceLength = 100;
+params.train.maxEpochs = 8;
 params.train.miniBatchSize = 32;
 
 params.train.RateDropFactor = 1;

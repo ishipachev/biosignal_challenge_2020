@@ -11,3 +11,6 @@ mPraat/
 # Ignore precalculated features
 data/features/*.mat
 
+# Ignore checkpoints folder
+sandbox_ilia/checkpoints
+

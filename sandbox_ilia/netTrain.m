@@ -1,23 +1,18 @@
-tgFolder = '../data/processed_labels/picked_only_vows';
-wavsFolder = '../data/wavs';
-featsFolder = '../data/features';
+function sylDetectNet = netTrain(params)
 
-%%
-params = loadparams();
-
+cpFolder = getCpFolder(params);
 numFiles = params.numFiles;
 rng(params.rng);
 
-[featuresTraining, ... 
+[featuresTraining, ...
  maskTraining, ...
  featuresValidation, ...
  maskValidation, ...
  s_trn, ...
- s_val] = wavs2feats(wavsFolder, featsFolder, tgFolder, numFiles);
-  
+ s_val] = wavs2feats(params);
+
 %% Get structures adjusted for a learning procedure
 
-params = loadparams();
 afe = params.afe;
 
 %Get Train Mask as categorical array
@@ -26,7 +21,7 @@ hopLength = windowLength - afe.OverlapLength;
 range = (hopLength) * (1:size(featuresTraining,1)) + hopLength;
 maskMode = zeros(size(range));
 for index = 1:numel(range)
-    maskMode(index) = mode(maskTraining( (index-1)*hopLength+1:(index-1)*hopLength+windowLength ));
+  maskMode(index) = mode(maskTraining( (index-1)*hopLength+1:(index-1)*hopLength+windowLength ));
 end
 maskTraining = maskMode.';
 maskTrainingCat = categorical(maskTraining);
@@ -34,7 +29,7 @@ maskTrainingCat = categorical(maskTraining);
 range = (hopLength) * (1:size(featuresValidation,1)) + hopLength;
 maskMode = zeros(size(range));
 for index = 1:numel(range)
-    maskMode(index) = mode(maskValidation( (index-1)*hopLength+1:(index-1)*hopLength+windowLength ));
+  maskMode(index) = mode(maskValidation( (index-1)*hopLength+1:(index-1)*hopLength+windowLength ));
 end
 maskValidation = maskMode.';
 maskValidationCat = categorical(maskValidation);
@@ -46,44 +41,50 @@ trainLabelCell = helperFeatureVector2Sequence(maskTrainingCat',sequenceLength,se
 
 
 %% Define net structure
-layers = [ ...    
-    sequenceInputLayer( size(featuresValidation,2) )    
-    bilstmLayer(400,"OutputMode","sequence")
-    dropoutLayer(0.2)
-    bilstmLayer(400,"OutputMode","sequence")
-    dropoutLayer(0.2)
-    fullyConnectedLayer(100)
-    dropoutLayer(0.2)
-    fullyConnectedLayer(2)   
-    softmaxLayer   
-    classificationLayer      
-    ];
-  
-options = trainingOptions("adam", ...
-    "MaxEpochs",params.train.maxEpochs, ...
-    "MiniBatchSize",params.train.miniBatchSize, ...
-    "Shuffle","every-epoch", ...     %"Shuffle", "never",
-    "Verbose",0, ...
-    "SequenceLength",sequenceLength, ...
-    "ValidationFrequency",floor(numel(trainFeatureCell)/params.train.miniBatchSize), ...
-    "ValidationData",{featuresValidation.',maskValidationCat.'}, ...
-    "Plots","training-progress", ...
-    "ExecutionEnvironment", "gpu", ...
-    "LearnRateSchedule","piecewise", ... %); %, ...
-    "LearnRateDropFactor", params.train.RateDropFactor, ...
-    "LearnRateDropPeriod", params.train.RateDropPeriod);
+layers = [ ...
+  sequenceInputLayer( size(featuresValidation,2) )
+  bilstmLayer(400,"OutputMode","sequence")
+  dropoutLayer(0.2)
+  bilstmLayer(400,"OutputMode","sequence")
+  dropoutLayer(0.2)
+  fullyConnectedLayer(100)
+  dropoutLayer(0.2)
+  fullyConnectedLayer(2)
+  softmaxLayer
+  classificationLayer
+  ];
 
-  
+
+options = trainingOptions("adam", ...
+  "MaxEpochs",params.train.maxEpochs, ...
+  "MiniBatchSize",params.train.miniBatchSize, ...
+  "Shuffle","every-epoch", ...     %"Shuffle", "never",
+  "Verbose",0, ...
+  "SequenceLength",sequenceLength, ...
+  "ValidationFrequency",floor(numel(trainFeatureCell)/params.train.miniBatchSize), ...
+  "ValidationData",{featuresValidation.',maskValidationCat.'}, ...
+  "Plots","training-progress", ...
+  "ExecutionEnvironment", "gpu", ...
+  "LearnRateSchedule","piecewise", ... %); %, ...
+  "LearnRateDropFactor", params.train.RateDropFactor, ...
+  "LearnRateDropPeriod", params.train.RateDropPeriod, ...
+  "CheckpointPath", cpFolder);
+
+
 doTraining = true;
 if doTraining
-   [speechDetectNet,netInfo] = trainNetwork(trainFeatureCell,trainLabelCell,layers,options);
-    fprintf("Validation accuracy: %f percent.\n", netInfo.FinalValidationAccuracy);
+  [sylDetectNet, netInfo] = trainNetwork(trainFeatureCell,trainLabelCell,layers,options);
+  fprintf("Validation accuracy: %f percent.\n", netInfo.FinalValidationAccuracy);
 else
-%     load speechDetectNet
+  %     load speechDetectNet
 end
 
+%Save
+trainOptFile = fullfile(cpFolder, 'trainOpt.mat');
+save(trainOptFile, 'layers', 'params');
+
 %%
-EstimatedVADMask = classify(speechDetectNet,featuresValidation.');
+EstimatedVADMask = classify(sylDetectNet, featuresValidation.');
 EstimatedVADMask = double(EstimatedVADMask);
 EstimatedVADMask = EstimatedVADMask.' - 1;
 
@@ -99,22 +100,7 @@ plot(EstimatedVADMask, 'LineWidth', 2);
 plot(maskValidation * 0.8, 'g', 'LineWidth', 2);
 hold off;
 
-%% Training file stats
-% EstimatedVADMask = classify(speechDetectNet,featuresTraining.');
-% EstimatedVADMask = double(EstimatedVADMask);
-% EstimatedVADMask = EstimatedVADMask.' - 1;
-% 
-% figure
-% cm = confusionchart(maskTraining,EstimatedVADMask,"title","Validation Accuracy");
-% cm.ColumnSummary = "column-normalized";
-% cm.RowSummary = "row-normalized";
-% 
-% figure;
-% hold on;
-% plot(s_val(1:128:end));
-% plot(EstimatedVADMask, 'LineWidth', 2);
-% plot(maskValidation * 0.8, 'g', 'LineWidth', 2);
-% hold off;
+end
 
 %% Helper Functions
 
@@ -140,4 +126,14 @@ function [sequences,sequencePerFile] = helperFeatureVector2Sequence(features,fea
             idx2 = idx2 + hopLength;
         end
     end
+end
+
+% Get next empty folder to store checkpoints
+function fullfoldername = getCpFolder(params)
+  cpFolder = dir(params.checkpointFolder);
+  isdir = [cpFolder(:).isdir];
+  idx = find(isdir, true, 'last');
+  foldername = num2str(str2num(cpFolder(idx).name) + 1);
+  fullfoldername = fullfile(params.checkpointFolder, foldername);
+  mkdir(fullfoldername);
 end
