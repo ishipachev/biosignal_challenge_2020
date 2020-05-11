@@ -20,8 +20,8 @@ params.extendWindowMul = 5;
 params.constShift = 0;
 
 params.rng = 46;
-params.sequenceLength = 200;
-params.train.maxEpochs = 16;
+params.sequenceLength = 400;
+params.train.maxEpochs = 1;
 params.train.miniBatchSize = 16;
 
 params.train.RateDropFactor = 1;

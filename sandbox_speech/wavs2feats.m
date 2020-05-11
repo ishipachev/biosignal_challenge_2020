@@ -49,7 +49,6 @@ function [feats, mask, full_s] = list2feats(fileList, featsFolder, tgFolder, par
     
     full_s = [full_s; s];
     feats = [feats; f];
-    
     [folder, name, ext] = fileparts(filename);
     addition = '_manual';
     ext = '.TextGrid';

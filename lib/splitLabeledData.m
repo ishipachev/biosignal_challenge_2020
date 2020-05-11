@@ -30,8 +30,12 @@ for i=1:wavsNum
 end
 
 perfIdx = setdiff(1:wavsNum, labelIdx);
-trnIdx = labelIdx([1 2 3 4 5 6 7 8 9 10 11 14 16 18 19 20 22 23 24 25 26 27 28]);
-valIdx = setdiff(labelIdx, trnIdx);
+
+% trnIdx = labelIdx([1 2 3 4 5 6 7 8 9 10 11 14 16 18 19 20 22 23 24 25 26 27 28]);
+% valIdx = setdiff(labelIdx, trnIdx);
+
+trnIdx = labelIdx;
+valIdx = labelIdx(end-2:end);
 
 end
 

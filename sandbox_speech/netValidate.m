@@ -1,12 +1,12 @@
-function errMat = netValidate(evalIdx, params)
+function [errMat, diffMat] = netValidate(evalIdx, params)
 
 %   filerange = 21:100;
 
 %   err_rate = evalNet(sylNet, filerange, params);
 
   foldername = getPastNetwork(params);
-  errMat = evalCpDir(foldername, evalIdx, params);
-  plotCpsVal(errMat, foldername);
+  [errMat, diffMat] = evalCpDir(foldername, evalIdx, params);
+  plotCpsVal(errMat, diffMat, foldername);
   
   appendStats(errMat, foldername);
 end
@@ -14,13 +14,14 @@ end
 %% Helper functions
 
 % function [meanErr, stdErr, maxErr, errMat] = evalCpDir(foldername, filerange, params)
-function errMat = evalCpDir(foldername, evalIdx, params)
+function [errMat, diffMat] = evalCpDir(foldername, evalIdx, params)
   list = dir(foldername);
   list = list(3:end);
   listC = natsortfiles({list.name});
   epochNum = numel(list) - 1; %minus option file
 %   meanErr = NaN(epochNum, 1); stdErr = NaN(epochNum, 1); maxErr = NaN(epochNum, 1);
   errMat = NaN(numel(evalIdx), epochNum); 
+  diffMat = NaN(numel(evalIdx), epochNum); 
   for ep=1:epochNum
     cpname = fullfile(list(ep).folder, listC{ep});
     load(cpname, 'net');
@@ -29,18 +30,20 @@ function errMat = evalCpDir(foldername, evalIdx, params)
     [errRate, evalDur, trueDur] = evalNet(net, evalIdx, params);
     
     errMat(:, ep) = errRate;
+    d = (trueDur - evalDur) ./ trueDur;
+    diffMat(:, ep) = d;
     
-    plotErrRate(errRate, evalDur, trueDur, ep, cpname);
+    plotErrRate(errRate, evalDur, trueDur, d, ep, cpname);
     fprintf("Error: %f%%\n\n", 100*(mean(errRate(:,1))));
 
   end
 end
 
-function [] = appendStats(errMat, foldername)
+function [] = appendStats(errMat, diffMat, foldername)
 
   trainOptFile = fullfile(foldername, 'trainOpt.mat');
   errMeans = mean(errMat);
-  save(trainOptFile, 'errMat', 'errMeans', '-append');
+  save(trainOptFile, 'errMat', 'errMeans', 'diffMat', '-append');
 end
 
 
