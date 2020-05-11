@@ -1,4 +1,4 @@
-function [errRate, evalDur, trueDur] = evalNet(sylNet, evalIdx, params)
+function [errRate, evalDur, trueDur] = evalNet(speechNet, evalIdx, params)
 %COUNTVALIDATEALL Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -17,7 +17,7 @@ for i=evalIdx
   [f, ~] = exctractOrLoadFeatures(filename, params.featsFolder, params);
   
 %   f = file2features(filename, params);
-  dur = countSpeechDur(sylNet, f, params);
+  dur = countSpeechDur(speechNet, f, params);
   trdur = true_dur(i);
   
   errRate(file_cnt) = 1 - abs(dur/trdur - 1);
@@ -36,18 +36,18 @@ end
 
 
 
-function cnt = countSpeechDur(sylNet, features, params)
-
-mask = classify(sylNet, features.');
-mask = double(mask);
-mask = mask.' - 1;
-
-hopLength = params.afeOpt.windowSize - params.afeOpt.overlapLength;
-cnt = sum(mask) * hopLength / params.afeOpt.fs;
-
-% cnt = nnz(diff(mask) == 1);
-
-end
+% function cnt = countSpeechDur(sylNet, features, params)
+% 
+% mask = classify(sylNet, features.');
+% mask = double(mask);
+% mask = mask.' - 1;
+% 
+% hopLength = params.afeOpt.windowSize - params.afeOpt.overlapLength;
+% cnt = sum(mask) * hopLength / params.afeOpt.fs;
+% 
+% % cnt = nnz(diff(mask) == 1);
+% 
+% end
 
 % function f = file2features(filename, params)
 %   [s, fs] = audioread(filename);

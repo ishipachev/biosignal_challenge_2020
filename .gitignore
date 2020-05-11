@@ -1,6 +1,7 @@
 # Data .wav files with speech #
 ##############
 data/wavs/*.wav
+runFolder/*.wav
 
 # Ignore mPraat toolbox #
 mPraat/
