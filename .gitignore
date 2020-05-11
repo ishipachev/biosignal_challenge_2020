@@ -10,7 +10,12 @@ mPraat/
 
 # Ignore precalculated features
 data/features/*.mat
+data/features_speech/*.mat
 
 # Ignore checkpoints folder
 sandbox_ilia/checkpoints
+sandbox_speech/checkpoints_speech
+
+sandbox_ilia/bestnet
+sandbox_speech/bestnet
 

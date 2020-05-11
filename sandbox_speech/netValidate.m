@@ -26,12 +26,12 @@ function errMat = evalCpDir(foldername, evalIdx, params)
     load(cpname, 'net');
     
     fprintf("Validating net for %d epoch..., cpname: %s\n", ep, cpname);
-    [errRate, sylCnt, trueSylCnt] = evalNet(net, evalIdx, params);
+    [errRate, evalDur, trueDur] = evalNet(net, evalIdx, params);
     
     errMat(:, ep) = errRate;
     
-    plotErrRate(errRate, sylCnt, trueSylCnt, ep, cpname);
-    fprintf("Error: %f%%\n", 100*(mean(errRate(:,1))));
+    plotErrRate(errRate, evalDur, trueDur, ep, cpname);
+    fprintf("Error: %f%%\n\n", 100*(mean(errRate(:,1))));
 
   end
 end
@@ -90,7 +90,6 @@ function foldername = getPastNetwork(params)
     maxFolderNum = max(maxFolderNum, num);
   end
   
-%   warning("Remove!"); maxFolderNum = 14;
   fname = num2str(maxFolderNum);
   foldername = fullfile(params.checkpointFolder, fname);
 end
