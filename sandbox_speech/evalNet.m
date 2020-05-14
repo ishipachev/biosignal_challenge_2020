@@ -16,12 +16,10 @@ for i=evalIdx
   
   [f, ~] = exctractOrLoadFeatures(filename, params.featsFolder, params);
   
-%   f = file2features(filename, params);
   dur = countSpeechDur(speechNet, f, params);
   trdur = true_dur(i);
   
   errRate(file_cnt) = 1 - abs(dur/trdur - 1);
-%   errRate(file_cnt) = abs(cnt/true_cnt - 1);
   evalDur(file_cnt) = dur;
   trueDur(file_cnt) = trdur;
   
@@ -33,28 +31,3 @@ for i=evalIdx
 end
   
 end
-
-
-
-% function cnt = countSpeechDur(sylNet, features, params)
-% 
-% mask = classify(sylNet, features.');
-% mask = double(mask);
-% mask = mask.' - 1;
-% 
-% hopLength = params.afeOpt.windowSize - params.afeOpt.overlapLength;
-% cnt = sum(mask) * hopLength / params.afeOpt.fs;
-% 
-% % cnt = nnz(diff(mask) == 1);
-% 
-% end
-
-% function f = file2features(filename, params)
-%   [s, fs] = audioread(filename);
-%   assert(params.afe.SampleRate == fs, ...
-%       "Sample rate of feature extractor doesn't match sample rate of file"); 
-%   s = soundNormalize(s);
-%   
-%   f = extract(params.afe, s);
-%   f = featNormalize(f);
-% end
