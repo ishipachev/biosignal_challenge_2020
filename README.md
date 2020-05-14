@@ -40,6 +40,12 @@ Just run test.p at the end.
 Put all .wav files inside *data/wavs* folder in the project's root. They are .gitignored by default, so this step should be done manually.
 To run test.p they also should be in runFolder.
 
+## Toolboxes used
+* audio_system_toolbox
+* neural_network_toolbox
+* signal_toolbox
+* statistics_toolbox
+
 
 ## Authors
 [Yeva Prysiazhniuk](https://www.linkedin.com/in/yeva-prysiazhniuk/) & [Ilia Shipachev](https://www.linkedin.com/feed/)
