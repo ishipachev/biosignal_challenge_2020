@@ -1,7 +1,7 @@
 function [syl, dur] = articulation_rate(sig, fs)
 
-sylsFolder = '../sandbox_syllabuses';
-speechFolder = '../sandbox_speech';
+sylsFolder = '../detect_syllabuses';
+speechFolder = '../detect_speech';
 optFname = 'trainOpt.mat';
 wcNetFname = 'net_checkpoint*.mat';
 
@@ -19,7 +19,7 @@ s = soundNormalize(sig);
 f = extract(params.afe, s);
 f = featNormalize(f);
 
-sylsCnt = runNet(net, f, params);
+sylsCnt = getScore(net, f, params);
 
 rmpath(sylsFolder);
 
@@ -38,7 +38,7 @@ s = soundNormalize(sig);
 f = extract(params.afe, s);
 f = featNormalize(f);
 
-speechDur = runNet(net, f, params);
+speechDur = getScore(net, f, params);
 
 rmpath(speechFolder);
 %%
