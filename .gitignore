@@ -3,8 +3,8 @@
 data/wavs/*.wav
 runFolder/*.wav
 
-# Ignore mPraat toolbox #
-mPraat/
+# Ignore mPraat toolbox #Checking out defb03c commit from https://github.com/bbTomas/mPraat repo
+# mPraat/
 
 # Ignore Matlab's temporary files
 *.asv
