@@ -2,12 +2,12 @@ function binMask = tg2mask(tgFilename, fs, duration, params)
 %TG2MASK Summary of this function goes here
 %   Detailed explanation goes here
 tg = tgRead(tgFilename);
-tname = 'MAU2';
+tname = params.tgTierName;
 tierIndex = tgI(tg, tname);
 
 tgt = tg.tier{tierIndex};
 
-tvow = tgFindLabels(tg, tname, 's');
+tvow = tgFindLabels(tg, tname, params.tgIntervalName);
 
 cidx = cell2mat(tvow);
 

@@ -1,4 +1,4 @@
-params = loadparams();
+params = loadSpeechParams();
 [trnIdx, valIdx, perfIdx] = splitLabeledData(params);
 net = netTrain(trnIdx, valIdx, params);
 %%

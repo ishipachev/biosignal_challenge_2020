@@ -1,4 +1,4 @@
-function cnt = countSyls(sylNet, features, params)
+function cnt = runNet(sylNet, features, params)
 
 mask = classify(sylNet, features.');
 mask = double(mask);

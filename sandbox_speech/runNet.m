@@ -1,4 +1,4 @@
-function cnt = countSpeechDur(speechNet, features, params)
+function cnt = runNet(speechNet, features, params)
 
 mask = classify(speechNet, features.');
 mask = double(mask);

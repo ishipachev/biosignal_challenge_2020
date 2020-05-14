@@ -1,4 +1,4 @@
-params = loadparams();
+params = loadSpeechParams();
 
 %%
 [trnIdx, valIdx, perfIdx] = splitLabeledData(params);
@@ -11,27 +11,27 @@ plot(diffMat);
 title('diffMat');
 
 %%
-params.sequenceLength = 800
+params.sequenceLength = 800;
 run_single;
-params.sequenceLength = 1600
+params.sequenceLength = 1600;
 run_single;
-params.sequenceLength = 3200
+params.sequenceLength = 3200;
 run_single;
 
 params.maxEpochs = 4;
-params.sequenceLength = 200
+params.sequenceLength = 200;
 run_single;
-params.sequenceLength = 400
+params.sequenceLength = 400;
 
 
-params.train.RateDropFactor = 0.25
-params.train.RateDropPeriod = 4
+params.train.RateDropFactor = 0.25;
+params.train.RateDropPeriod = 4;
 run_single;
-params.train.RateDropFactor = 0.5
-params.train.RateDropPeriod = 2
+params.train.RateDropFactor = 0.5;
+params.train.RateDropPeriod = 2;
 run_single;
-params.train.RateDropFactor = 1
-params.train.RateDropPeriod = 4
+params.train.RateDropFactor = 1;
+params.train.RateDropPeriod = 4;
 
 
 %%

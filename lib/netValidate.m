@@ -21,20 +21,20 @@ function [errMat, diffMat] = evalCpDir(foldername, evalIdx, params)
   epochNum = numel(list) - 1; %minus option file
 %   meanErr = NaN(epochNum, 1); stdErr = NaN(epochNum, 1); maxErr = NaN(epochNum, 1);
   errMat = NaN(numel(evalIdx), epochNum); 
-  diffMat = NaN(numel(evalIdx), epochNum); 
+  diffMat = NaN(numel(evalIdx), epochNum);
   for ep=1:epochNum
     cpname = fullfile(list(ep).folder, listC{ep});
     load(cpname, 'net');
     
     fprintf("Validating net for %d epoch..., cpname: %s\n", ep, cpname);
-    [errRate, evalDur, trueDur] = evalNet(net, evalIdx, params);
+    [errRate, evalCnt, trueCnt] = evalNet(net, evalIdx, params);
     
     errMat(:, ep) = errRate;
-    d = (evalDur - trueDur) ./ trueDur;
+    d = (evalCnt - trueCnt) ./ trueCnt;
     diffMat(:, ep) = d;
     
-%     plotErrRate(errRate, evalDur, trueDur, d, ep, cpname);
-    fprintf("Error: %f%%\n\n", 100*(mean(errRate(:,1))));
+%     plotErrRate(errRate, evalCnt, trueCnt, ep, cpname);
+    fprintf("Error: %f%%\n", 100*(mean(errRate(:,1))));
 
   end
 end
@@ -45,41 +45,6 @@ function [] = appendStats(errMat, diffMat, foldername)
   errMeans = mean(errMat);
   save(trainOptFile, 'errMat', 'errMeans', 'diffMat', '-append');
 end
-
-
-% function [] = plotErrRate(errRate, sylCnt, trueSylCnt, epochNum, cpname)
-% 
-%   figure;
-%   subplot(2,1,1);
-%   plot([ sylCnt, trueSylCnt ]);
-% %   [~,name,~] = fileparts(cpname);
-%   namestr = sprintf("Syls in files: cpname: %s, epoch %d", cpname, epochNum); 
-%   title(namestr, 'Interpreter', 'none');
-%   xlabel("File number");
-%   ylabel("Number of syllabus");
-%   legend("Detected", "True value");
-%   grid on;
-% 
-% %   figure;
-%   subplot(2,1,2);
-%   plot(errRate(:,1));
-%   title("Error rate across files");
-%   xlabel("File number");
-%   ylabel("Error rate");
-%   grid on;
-% 
-% end
-
-% function [] = plotNetTrainStats(errMat, foldername)
-%   figure;
-%   boxplot(errMat);
-% %   [~,name,~] = fileparts(foldername);
-%   titilestr = sprintf("Error per epoch, folder %s", foldername);
-%   title(titilestr, 'Interpreter', 'none');
-%   xlabel("Epoch number");
-%   ylabel("Error");
-%   grid on;
-% end
 
 
 function foldername = getPastNetwork(params)

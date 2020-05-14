@@ -1,4 +1,4 @@
-params = loadparams();
+params = loadSylsParams();
 
 %%
 [trnIdx, valIdx, perfIdx] = splitLabeledData(params);

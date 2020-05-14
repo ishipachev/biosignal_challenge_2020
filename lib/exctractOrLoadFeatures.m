@@ -13,7 +13,7 @@ function [f, s] = exctractOrLoadFeatures(filename, featsFolder, params)
   end
   
   %%else cases  
-  [s, fs] = audioread(filename);
+  [s, fs] = audioread(filename);  
   assert(params.afeOpt.fs == fs, ...
     "Sample rate of feature extractor doesn't match sample rate of file");
   s = soundNormalize(s);

@@ -1,4 +1,4 @@
-function sylDetectNet = netTrain(trnIdx, valIdx, params)
+function net = netTrain(trnIdx, valIdx, params)
 
 cpFolder = getCpFolder(params);
 % numFiles = params.numFiles;
@@ -72,7 +72,7 @@ options = trainingOptions("adam", ...
 
 doTraining = true;
 if doTraining
-  [sylDetectNet, netInfo] = trainNetwork(trainFeatureCell,trainLabelCell,layers,options);
+  [net, netInfo] = trainNetwork(trainFeatureCell,trainLabelCell,layers,options);
   fprintf("Validation accuracy: %f percent.\n", netInfo.FinalValidationAccuracy);
 else
   %     load speechDetectNet
@@ -83,7 +83,7 @@ trainOptFile = fullfile(cpFolder, 'trainOpt.mat');
 save(trainOptFile, 'layers', 'params');
 
 %%
-EstimatedVADMask = classify(sylDetectNet, featuresValidation.');
+EstimatedVADMask = classify(net, featuresValidation.');
 EstimatedVADMask = double(EstimatedVADMask);
 EstimatedVADMask = EstimatedVADMask.' - 1;
 

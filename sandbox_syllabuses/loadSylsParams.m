@@ -1,33 +1,33 @@
-function params = loadparams()
+function params = loadSylsParams()
 %LOADPARAMS Summary of this function goes here
 %   Detailed explanation goes here
 
 params.wavsFolder = '../data/wavs';
-params.featsFolder = '../data/features_speech';
-params.checkpointFolder = 'checkpoints_speech';
+params.featsFolder = '../data/features';
+params.checkpointFolder = 'checkpoints';
 params.tgFolder = '../data/processed_labels/picked_only_vows';
+params.GTPath = '../data/reference_data.mat';
 
-% params.numFiles = 20;
+params.rng = 46;
 
-params.afeOpt.windowSize = 256;
-params.afeOpt.overlapLength = 128;
+params.valProportion = 1/5;
+params.extendWindowMul = 0; 
+params.constShift = 0;
+
+params.sequenceLength = 800;
+
+params.train.maxEpochs = 2;
+params.train.miniBatchSize = 16;
+params.train.RateDropFactor = 1;
+params.train.RateDropPeriod = 4;
+
+params.afeOpt.windowSize = 128;
+params.afeOpt.overlapLength = 64;
 params.afeOpt.fs = 44100;
 params.afeOpt.recompute = false;
 
-params.valProportion = 1/5;
-params.extendWindowMul = 5;
-% params.constShift = params.windowSize * 10;
-params.constShift = 0;
-
-params.rng = 46;
-params.sequenceLength = 400;
-params.train.maxEpochs = 4;
-params.train.miniBatchSize = 16;
-
-params.train.RateDropFactor = 1;
-params.train.RateDropPeriod = 4;
-% params.train.InitialLearnRate = 0.01;
-
+params.net.layerSize = 200;
+params.net.dropout = 0.2;
 
 params.afe = audioFeatureExtractor('SampleRate',params.afeOpt.fs, ...
     'Window',hann(params.afeOpt.windowSize,"Periodic"), ...
@@ -45,10 +45,6 @@ params.afe = audioFeatureExtractor('SampleRate',params.afeOpt.fs, ...
     'spectralSlope',true, ...
     'spectralSpread',true, ... %added
     'harmonicRatio',true);
-  
-  
-params.net.layerSize = 200;
-params.net.dropout = 0.2;
 
 end
 

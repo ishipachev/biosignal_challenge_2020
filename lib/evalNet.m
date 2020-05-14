@@ -1,27 +1,27 @@
-function [errRate, evalDur, trueDur] = evalNet(speechNet, evalIdx, params)
+function [errRate, evalVal, trueVal] = evalNet(net, evalIdx, params)
 %COUNTVALIDATEALL Summary of this function goes here
 %   Detailed explanation goes here
 
 fileList = dir(params.wavsFolder);
 fileList = fileList(3:end);
 
-load("../data/reference_data.mat", 'true_dur');
-% params = loadparams();
+gt_val = loadGT(params);
+
 errRate = NaN(numel(evalIdx), 1);
-evalDur = NaN(numel(evalIdx), 1);
-trueDur = NaN(numel(evalIdx), 1);
+evalVal = NaN(numel(evalIdx), 1);
+trueVal = NaN(numel(evalIdx), 1);
+
 file_cnt = 1;
 for i=evalIdx
   filename = fullfile(fileList(i).folder, fileList(i).name);
   
   [f, ~] = exctractOrLoadFeatures(filename, params.featsFolder, params);
   
-  dur = countSpeechDur(speechNet, f, params);
-  trdur = true_dur(i);
+  val = runNet(net, f, params);
   
-  errRate(file_cnt) = 1 - abs(dur/trdur - 1);
-  evalDur(file_cnt) = dur;
-  trueDur(file_cnt) = trdur;
+  errRate(file_cnt) = 1 - abs(val/gt_val(i) - 1);
+  evalVal(file_cnt) = val;
+  trueVal(file_cnt) = gt_val(i);
   
   if rem(file_cnt, 10) == 0
     fprintf("Processed %d, out of %d\n", file_cnt, numel(evalIdx));
