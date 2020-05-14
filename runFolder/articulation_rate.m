@@ -7,7 +7,7 @@ wcNetFname = 'net_checkpoint*.mat';
 
 %% Syllabus
 addpath(sylsFolder);
-bestnetFolder = 'bestnet_last/9';
+bestnetFolder = 'net';
 % fprintf("Syls net: %s\n", bestnetFolder);
 load(fullfile(sylsFolder, bestnetFolder, optFname), 'params');
 
@@ -26,7 +26,7 @@ rmpath(sylsFolder);
 %% Speech duration
 addpath(speechFolder);
 
-bestnetFolder = 'bestnet_last/2';
+bestnetFolder = 'net';
 % fprintf("Speech net: %s\n", bestnetFolder);
 load(fullfile(speechFolder, bestnetFolder, optFname), 'params');
 
