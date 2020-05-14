@@ -10,13 +10,13 @@ mPraat/
 *.asv
 
 # Ignore precalculated features
-data/features/*.mat
-data/features_speech/*.mat
+detect_syllabuses/features_syls/*.mat
+detect_speech/features_speech/*.mat
 
 # Ignore checkpoints folder
-sandbox_syllabuses/checkpoints
-sandbox_speech/checkpoints_speech
+detect_syllabuses/checkpoints_syls
+detect_speech/checkpoints_speech
 
-sandbox_syllabuses/bestnet
-sandbox_speech/bestnet
+detect_syllabuses/bestnet
+detect_speech/bestnet
 

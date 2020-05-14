@@ -1,0 +1,2 @@
+paramsSyls = loadSylsParams();
+runSingleTrainAndVal(paramsSyls);

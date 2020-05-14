@@ -1,0 +1,2 @@
+paramsSpeech = loadSpeechParams();
+runSingleTrainAndVal(paramsSpeech);

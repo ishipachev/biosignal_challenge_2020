@@ -1,2 +1,0 @@
-paramsSyls = loadSylsParams();
-runSingleTrainAndVal(paramsSyls);
