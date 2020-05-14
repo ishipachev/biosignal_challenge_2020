@@ -17,7 +17,7 @@ for i=evalIdx
   
   [f, ~] = exctractOrLoadFeatures(filename, params.featsFolder, params);
   
-  val = runNet(net, f, params);
+  val = getScore(net, f, params);
   
   errRate(file_cnt) = 1 - abs(val/gt_val(i) - 1);
   evalVal(file_cnt) = val;

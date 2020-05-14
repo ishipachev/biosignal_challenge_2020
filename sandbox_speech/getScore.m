@@ -1,4 +1,4 @@
-function cnt = runNet(speechNet, features, params)
+function cnt = getScore(speechNet, features, params)
 
 mask = classify(speechNet, features.');
 mask = double(mask);

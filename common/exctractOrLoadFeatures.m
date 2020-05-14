@@ -1,6 +1,9 @@
 function [f, s] = exctractOrLoadFeatures(filename, featsFolder, params)
 % Extract features from .wav file or load them if they already calculated
-  [pathstr, name, ext] = fileparts(filename);
+  [~, name, ~] = fileparts(filename);
+  if ~exist(featsFolder, 'dir')
+    mkdir(featsFolder);
+  end
   matfile = fullfile(featsFolder, [name '.mat']);
   
   if exist(matfile, 'file')

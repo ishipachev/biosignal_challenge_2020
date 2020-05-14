@@ -1,14 +1,11 @@
-function [errMat, diffMat] = netValidate(evalIdx, params)
+function [errMat, diffMat] = netValidate(evalIdx, cpFolder, params)
 
-%   filerange = 21:100;
 
-%   err_rate = evalNet(sylNet, filerange, params);
-
-  foldername = getPastNetwork(params);
-  [errMat, diffMat] = evalCpDir(foldername, evalIdx, params);
-  plotCpsVal(errMat, foldername);
+%   foldername = getPastNetwork(params);
+  [errMat, diffMat] = evalCpDir(cpFolder, evalIdx, params);
+  plotCpsVal(errMat, cpFolder);
   
-  appendStats(errMat, diffMat, foldername);
+  appendStats(errMat, diffMat, cpFolder);
 end
 
 %% Helper functions

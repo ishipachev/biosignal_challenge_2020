@@ -1,4 +1,4 @@
-function net = netTrain(trnIdx, valIdx, params)
+function [net, cpFolder] = netTrain(trnIdx, valIdx, params)
 
 cpFolder = getCpFolder(params);
 % numFiles = params.numFiles;
@@ -41,18 +41,10 @@ trainLabelCell = helperFeatureVector2Sequence(maskTrainingCat',sequenceLength,se
 
 
 %% Define net structure
-layers = [ ...
-  sequenceInputLayer( size(featuresValidation,2) )
-  bilstmLayer(params.net.layerSize,"OutputMode","sequence")
-  dropoutLayer(params.net.dropout)
-  bilstmLayer(params.net.layerSize,"OutputMode","sequence")
-  dropoutLayer(params.net.dropout)
-%   fullyConnectedLayer(100)
-  fullyConnectedLayer(2)
-  softmaxLayer
-  classificationLayer
-  ];
 
+layers = params.net.layers;
+layers = [sequenceInputLayer( size(featuresValidation, 2))
+          layers];
 
 options = trainingOptions("adam", ...
   "MaxEpochs",params.train.maxEpochs, ...
@@ -128,7 +120,7 @@ function [sequences,sequencePerFile] = helperFeatureVector2Sequence(features,fea
 end
 
 % Get next empty folder to store checkpoints
-function fullfoldername = getCpFolder(params)
+function cpFolder = getCpFolder(params)
   cpFolder = dir(params.checkpointFolder);
   isdir = [cpFolder(:).isdir];
   isdir(1:2) = false;
@@ -140,9 +132,9 @@ function fullfoldername = getCpFolder(params)
   end
   
   foldername = num2str(maxFolderNum + 1);
-  fullfoldername = fullfile(params.checkpointFolder, foldername);
-  if exist(fullfoldername, 'dir')
+  cpFolder = fullfile(params.checkpointFolder, foldername);
+  if exist(cpFolder, 'dir')
     error("Folder for checkpoints already exists");
   end
-  mkdir(fullfoldername);
+  mkdir(cpFolder);
 end

@@ -1,4 +1,4 @@
-function cnt = runNet(sylNet, features, params)
+function cnt = getScore(sylNet, features, params)
 
 mask = classify(sylNet, features.');
 mask = double(mask);

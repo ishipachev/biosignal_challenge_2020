@@ -3,7 +3,7 @@ function params = loadSpeechParams()
 %   Detailed explanation goes here
 
 params.wavsFolder = '../data/wavs';
-params.featsFolder = '../data/features_speech';
+params.featsFolder = 'features_speech';
 params.checkpointFolder = 'checkpoints_speech';
 params.GTPath = '../data/reference_data.mat';
 params.tgFolder = '../data/processed_labels/picked_only_vows';
@@ -47,6 +47,19 @@ params.afe = audioFeatureExtractor('SampleRate',params.afeOpt.fs, ...
     'spectralSlope',true, ...
     'spectralSpread',true, ... %added
     'harmonicRatio',true);
+
+% without first layer
+params.net.layers = [ ...
+% this commented layer defined futher in netTrain
+%   sequenceInputLayer( size(featuresValidation,2) ) 
+  bilstmLayer(params.net.layerSize,"OutputMode","sequence")
+  dropoutLayer(params.net.dropout)
+  bilstmLayer(params.net.layerSize,"OutputMode","sequence")
+  dropoutLayer(params.net.dropout)
+  fullyConnectedLayer(2)
+  softmaxLayer
+  classificationLayer
+  ];
   
 end
 
