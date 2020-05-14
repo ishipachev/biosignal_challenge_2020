@@ -6,9 +6,9 @@ function [errMat, diffMat] = netValidate(evalIdx, params)
 
   foldername = getPastNetwork(params);
   [errMat, diffMat] = evalCpDir(foldername, evalIdx, params);
-  plotCpsVal(errMat, diffMat, foldername);
+  plotCpsVal(errMat, foldername);
   
-  appendStats(errMat, foldername);
+  appendStats(errMat, diffMat, foldername);
 end
 
 %% Helper functions
@@ -30,10 +30,10 @@ function [errMat, diffMat] = evalCpDir(foldername, evalIdx, params)
     [errRate, evalDur, trueDur] = evalNet(net, evalIdx, params);
     
     errMat(:, ep) = errRate;
-    d = (trueDur - evalDur) ./ trueDur;
+    d = (evalDur - trueDur) ./ trueDur;
     diffMat(:, ep) = d;
     
-    plotErrRate(errRate, evalDur, trueDur, d, ep, cpname);
+%     plotErrRate(errRate, evalDur, trueDur, d, ep, cpname);
     fprintf("Error: %f%%\n\n", 100*(mean(errRate(:,1))));
 
   end

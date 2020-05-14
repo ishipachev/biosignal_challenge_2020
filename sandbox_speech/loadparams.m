@@ -21,7 +21,7 @@ params.constShift = 0;
 
 params.rng = 46;
 params.sequenceLength = 400;
-params.train.maxEpochs = 1;
+params.train.maxEpochs = 4;
 params.train.miniBatchSize = 16;
 
 params.train.RateDropFactor = 1;
@@ -46,7 +46,9 @@ params.afe = audioFeatureExtractor('SampleRate',params.afeOpt.fs, ...
     'spectralSpread',true, ... %added
     'harmonicRatio',true);
   
-
+  
+params.net.layerSize = 200;
+params.net.dropout = 0.2;
 
 end
 

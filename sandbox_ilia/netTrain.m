@@ -43,10 +43,10 @@ trainLabelCell = helperFeatureVector2Sequence(maskTrainingCat',sequenceLength,se
 %% Define net structure
 layers = [ ...
   sequenceInputLayer( size(featuresValidation,2) )
-  bilstmLayer(200,"OutputMode","sequence")
-  dropoutLayer(0.2)
-  bilstmLayer(200,"OutputMode","sequence")
-  dropoutLayer(0.2)
+  bilstmLayer(params.net.layerSize,"OutputMode","sequence")
+  dropoutLayer(params.net.dropout)
+  bilstmLayer(params.net.layerSize,"OutputMode","sequence")
+  dropoutLayer(params.net.dropout)
 %   fullyConnectedLayer(100)
   fullyConnectedLayer(2)
   softmaxLayer

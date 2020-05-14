@@ -6,32 +6,35 @@ optFname = 'trainOpt.mat';
 wcNetFname = 'net_checkpoint*.mat';
 
 %% Syllabus
-addpath(sylsFolder);
-% disp('lolo');
-% cd ..
-bestnetFolder = 'bestnet/4';
-load(fullfile(sylsFolder, bestnetFolder, optFname), 'params');
-
-netNameStruct = dir(fullfile(sylsFolder, bestnetFolder, wcNetFname));
-netFname = fullfile(netNameStruct.folder, netNameStruct.name);
-load(netFname, 'net');
+% addpath(sylsFolder);
+% bestnetFolder = 'bestnet_last/9';
+% fprintf("Syls net: %s\n", bestnetFolder);
+% load(fullfile(sylsFolder, bestnetFolder, optFname), 'params');
+% 
+% netNameStruct = dir(fullfile(sylsFolder, bestnetFolder, wcNetFname));
+% netFname = fullfile(netNameStruct.folder, netNameStruct.name);
+% load(netFname, 'net');
 
 % sylNet = net;
-s = soundNormalize(sig);
-f = extract(params.afe, s);
-f = featNormalize(f);
+% s = soundNormalize(sig);
+% f = extract(params.afe, s);
+% f = featNormalize(f);
 
-sylsCnt = countSyls(net, f, params);
+% sylsCnt = countSyls(net, f, params);
+fprintf("Syls HUI");
+sylsCnt = 0;
 
 rmpath(sylsFolder);
 %% Speech duration
 addpath(speechFolder);
 
-bestnetFolder = 'bestnet/2';
+bestnetFolder = 'bestnet_last/2';
+fprintf("Speech net: %s\n", bestnetFolder);
 load(fullfile(speechFolder, bestnetFolder, optFname), 'params');
 
 netNameStruct = dir(fullfile(speechFolder, bestnetFolder, wcNetFname));
 netFname = fullfile(netNameStruct.folder, netNameStruct.name);
+% fprintf("Speech Net: %s", netFname);
 load(netFname, 'net');
 
 % speechNet = net;
