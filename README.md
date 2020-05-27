@@ -20,7 +20,12 @@ The goal of the Biosignal Challenge 2020 is to use the computing environment MAT
 
 ## How to run
 
+### Network train
 Go into *detect_speech* or *detect_syls* directory. Run setup.m in the folder to configure path.
+
+### Detection on Biosignal Challenge 2020 contest files
+Go into *runFolder* directory. Put all .wav files there. Run *test.p* file.
+
 
 ### Params
 Check configuration file *loadSpeechParams* or *loadSylsParams* and all related paths in it. Next parameters should be set according labeled data and sound files:
