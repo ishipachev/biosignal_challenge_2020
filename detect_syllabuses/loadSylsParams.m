@@ -7,10 +7,27 @@ params.featsFolder = 'features_syls';
 params.checkpointFolder = 'checkpoints_syls';
 params.GTPath = '../data/reference_data.mat';
 params.tgFolder = '../data/processed_labels/picked_only_vows';
-params.tgTierName = 'MAU';
-params.tgIntervalName = 'v';
+params.tgTierName = 'MAU';   %tier sign we used to label data, not common
+params.tgIntervalName = 'v'; %vowel sign we use to label data, not common
 
-params.rng = 46;
+%% Labeled data set splitting options
+params.rng = 42;    % fix random generator, comment if randomness is needed
+params.trnProportion = 1; % set to 1, if you want to train on all files
+                          % set to 0, if you want to split files by names
+                          % provided by two options below
+%set filenames to train on, can work with trnProp together
+% params.trnNames = ["R09_0235.WAV", ...
+%                    "R09_0234.WAV"];
+% OR use it this way
+% params.trnNames = loadSylsTrnFilenames();
+
+%set filenames to train on, can work with trnProp together
+% params.valNames = ["R09_0235.WAV", ...
+%                    "R09_0234.WAV"];
+% OR use it this way
+params.valNames = loadSylsValFilenames();
+
+%%
 
 params.valProportion = 1/5;
 params.extendWindowMul = 0; 

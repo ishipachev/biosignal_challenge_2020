@@ -7,15 +7,30 @@ params.featsFolder = 'features_speech';
 params.checkpointFolder = 'checkpoints_speech';
 params.GTPath = '../data/reference_data.mat';
 params.tgFolder = '../data/processed_labels/picked_only_vows';
-params.tgTierName = 'MAU2';
-params.tgIntervalName = 's';
+params.tgTierName = 'MAU2';  %tier sign we used to label data, not common
+params.tgIntervalName = 's'; %speech sign we use to label data, not common
 
-params.rng = 46;
 
-params.valProportion = 1/5;
+%% Labeled data set splitting options
+params.rng = 42;    % fix random generator, comment if randomness is needed
+params.trnProportion = 1; % set to 1, if you want to train on all files
+                          % set to 0, if you want to split files by names
+                          % provided by two options below
+%set filenames to train on, can work with trnProp together
+% params.trnNames = ["R09_0235.WAV", ...
+%                    "R09_0234.WAV"];
+% OR use it this way
+% params.trnNames = loadSpeechTrnFilenames();
+
+%set filenames to train on, can work with trnProp together
+% params.valNames = ["R09_0235.WAV", ...
+%                    "R09_0234.WAV"];
+% OR use it this way
+params.valNames = loadSpeechValFilenames();
+
+%%
 params.extendWindowMul = 5;
 params.constShift = 0;
-
 params.sequenceLength = 400;
 
 params.train.maxEpochs = 2;
