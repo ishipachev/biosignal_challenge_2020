@@ -20,14 +20,20 @@ The goal of the Biosignal Challenge 2020 is to use the computing environment MAT
 
 ## How to run
 
-Go into *detect_speech* or *detect_syls* directory. Run setup.m in the folder to configure path. 
+Go into *detect_speech* or *detect_syls* directory. Run setup.m in the folder to configure path.
+
+### Params
 Check configuration file *loadSpeechParams* or *loadSylsParams* and all related paths in it. Next parameters should be set according labeled data and sound files:
 * params.wavsFolder
 * params.GTPath
 * params.tgFolder
 * params.tgTierName
 * params.tgIntervalName
+
 Params files also include all configuration parameters, including options for feature extractor and layers configuration. After each training they will be saved next to all checkpoints.
+
+Splitting labeled datased defined by *params.trnProportion* and *params.trnNames* + *params.valNames*. *params.trnProportion* is used to devide labeled set on train and validation portions, but if some files named manually through usage of options *params.trnNames* or *params.valNames* they will be added to proportionally devided set.
+To avoid proportional devision and rely only on written filenames, set *params.trnProportion* to zero
 
 ## Validate by running task.p
 
