@@ -7,7 +7,7 @@ http://sami.fel.cvut.cz/biosignalchallenge2020/
 
 ## About
 
-This small repot designed to solve biosignal challenge described in the link above. Shortly: the challenge is to cound amount of syllabuses and length of speech for kids of different age. At the end it should help to calculate Articulation rate.
+This small repo is designed to solve biosignal challenge described in the link above. Shortly: the challenge is to count amount of syllabuses and length of speech for kids of a various age. At the end it should help to calculate articulation rate.
 
 ### Articulation rate (copy paste from challenge webpage)
 Articulation rate (AR) is a prosodic feature that indicates the number of spoken speech units per time. It is typically measured during connected speech where all types of pauses including silence, respiration and hesitations (such as /ah/, /um/, etc.) are excluded. Therefore, the articulation rate is mainly viewed as a representation of speech motor control since the linguistic effects are reduced.
@@ -35,14 +35,14 @@ Check configuration file *loadSpeechParams* or *loadSylsParams* and all related 
 * params.tgTierName
 * params.tgIntervalName
 
-Params files also include all configuration parameters, including options for feature extractor and layers configuration. After each training they will be saved next to all checkpoints.
+Params files also include all configuration parameters with options for feature extractor and layers configuration. After each training they will be saved next to all checkpoints so all configuration will be stored with results it have produced.
 
-Splitting labeled datased defined by *params.trnProportion* and *params.trnNames* + *params.valNames*. *params.trnProportion* is used to devide labeled set on train and validation portions, but if some files named manually through usage of options *params.trnNames* or *params.valNames* they will be added to proportionally devided set.
-To avoid proportional devision and rely only on written filenames, set *params.trnProportion* to zero
+Splitting labeled datased defined by *params.trnProportion* and *params.trnNames* + *params.valNames*. *params.trnProportion* is used to split labeled set on train and validation portions, but if some files manually named by usage of options *params.trnNames* or *params.valNames* they will be added to mentioned set.
+To skip proportional splitting and rely only on written filenames, set *params.trnProportion* to zero
 
 ## Validate by running task.p
 
-To validate result pick the best network from *checkpoint* folder. Put this network checkpoint (it is a net itself) into *net* folder with *trainOpt* file. This network and options will be used to evaluate result on all files by testing script. Also put all .wav files into runFolder. It is necessarily for running test.p script. 
+To validate result pick the best network from *checkpoint* folder. Put this network checkpoint (it is a net itself) into *net* folder with *trainOpt* file. This network and its options will be used to evaluate result on all files by testing script. Also put all .wav files into runFolder. It is necessarily for running test.p script and was designed this way by challenge organizers. 
 Just run test.p at the end.
 
 
@@ -59,7 +59,7 @@ To run test.p they also should be in runFolder.
 
 
 ## Authors
-[Yeva Prysiazhniuk](https://www.linkedin.com/in/yeva-prysiazhniuk/) & [Ilia Shipachev](https://www.linkedin.com/feed/)
+[Yeva Prysiazhniuk](https://www.linkedin.com/in/yeva-prysiazhniuk/) & [Ilia Shipachev](https://www.linkedin.com/in/ilia-shipachev-124175a9/)
 
 
 ## Biblio links
